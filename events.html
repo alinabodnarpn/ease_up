@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Афіша доступних подій</title>
+</head>
+<body>
+    <main class="page">
+        <header class="page-header">
+            <a href="./index.html" class="page-header__back" aria-label="Назад">
+                <img src="./icons/arrow-left.svg" alt="" aria-hidden="true" class="page-header__icon" />
+            </a>
+
+            <h1 class="page-header__title">Афіша доступних подій</h1>
+
+            <button class="page-header__action" type="button" aria-label="Фільтр">
+                <img src="./icons/filter.svg" alt="" aria-hidden="true" class="page-header__icon" />
+            </button>
+        </header>
+
+        <section class="page-content">
+            <div class="events-list">
+                <article class="event-card">
+                    <a href="#" class="event-card-link">
+                        <div class="event-image">
+                            <img src="./images/event.svg" alt="Афіша події" class="event-image-file" />
+                        </div>
+
+                        <div class="event-content">
+                            <h3 class="event-title">Антоніо Вівальді. Пори року</h3>
+
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <img src="./icons/calendar.svg" alt="" class="event-meta-icon" aria-hidden="true" />
+                                    <p class="event-date">29.11.24</p>
+                                </div>
+
+                                <div class="event-meta-item">
+                                    <img src="./icons/price.svg" alt="" class="event-meta-icon" aria-hidden="true" />
+                                    <p class="event-price">400 грн</p>
+                                </div>
+
+                                <div class="event-meta-item">
+                                    <img src="./icons/location.svg" alt="" class="event-meta-icon" aria-hidden="true" />
+                                    <p class="event-location">Національна Філармонія</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="event-card">
+                    <a href="#" class="event-card-link">
+                        <div class="event-image">
+                            <img src="./images/event.svg" alt="Афіша події" class="event-image-file" />
+                        </div>
+
+                        <div class="event-content">
+                            <h3 class="event-title">Концерт Maria Lui Quintet</h3>
+
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <img src="./icons/calendar.svg" alt="" class="event-meta-icon" aria-hidden="true" />
+                                    <p class="event-date">1.12.24</p>
+                                </div>
+
+                                <div class="event-meta-item">
+                                    <img src="./icons/price.svg" alt="" class="event-meta-icon" aria-hidden="true" />
+                                    <p class="event-price">500 грн</p>
+                                </div>
+
+                                <div class="event-meta-item">
+                                    <img src="./icons/location.svg" alt="" class="event-meta-icon" aria-hidden="true" />
+                                    <p class="event-location">Jam Factory Art Center</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bottom-nav">
+        <a href="./index.html" class="bottom-nav__item" aria-label="Головна">
+            <img src="./icons/home.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+
+        <a href="./explore.html" class="bottom-nav__item" aria-label="Пошук">
+            <img src="./icons/search.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+
+        <a href="./create.html" class="bottom-nav__item create-btn" aria-label="Створити">
+            <img src="./icons/plus.svg" alt="" aria-hidden="true" class="bottom-nav__icon plus-icon" />
+        </a>
+
+        <a href="./map.html" class="bottom-nav__item" aria-label="Карта">
+            <img src="./icons/map.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+
+        <a href="./profile.html" class="bottom-nav__item" aria-label="Профіль">
+            <img src="./icons/profile.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+    </footer>
+</body>
+</html>

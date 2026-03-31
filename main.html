@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Ease Up</title>
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="header">
+            <div class="header-container">
+                <div class="header-left">
+                    <a href="./index.html" class="logo">
+                        <img src="./icons/icon.svg" alt="" class="main-icon" aria-hidden="true" />
+                    </a>
+
+                    <div class="location-block">
+                        <img src="./icons/location.svg" alt="" class="location-icon" aria-hidden="true" />
+                        <span class="location-text">Львів</span>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <button class="icon-btn" type="button" aria-label="Сповіщення">
+                        <img src="./icons/bell.svg" alt="" class="header-icon" aria-hidden="true" />
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="hero-section">
+                <a href="#" class="hero-card">
+                    <div class="hero-card-image">
+                        <img src="./images/hero-placeholder.jpg" alt="Головний банер" />
+                    </div>
+
+                    <div class="hero-card-content">
+                        <h1 class="hero-title">Назва головної новини або важливого матеріалу</h1>
+
+                        <div class="hero-meta">
+                            <span class="hero-tag">Доступність</span>
+                            <span class="hero-time">2 хв</span>
+                        </div>
+                    </div>
+                </a>
+            </section>
+
+            <section class="events-section">
+                <div class="section-header">
+                    <h2>Афіша доступних подій</h2>
+                    <a href="./events.html" class="section-arrow-link" aria-label="Перейти до всіх подій">
+            <img src="./icons/arrow-right.svg" alt="" aria-hidden="true" class="section-arrow-icon" />
+        </a>
+                </div>
+
+                <div class="events-list" id="events-list">
+                    <!-- JS will render event cards here -->
+                </div>
+            </section>
+
+            <section class="publications-section">
+                <div class="section-header">
+                    <h2>Публікації</h2>
+                    <a href="./publications.html" class="section-arrow-link" aria-label="Перейти до всіх публікацій">
+        <img src="./icons/arrow-right.svg" alt="" aria-hidden="true" class="section-arrow-icon" />
+    </a>
+                </div>
+
+                <div class="publications-list" id="publications-list">
+                    <!-- JS will render publication cards here -->
+                </div>
+            </section>
+
+            <section class="applications-section">
+                <div class="section-header">
+                    <h2>Звернення</h2>
+                    <a href="./applications.html" class="section-arrow-link" aria-label="Перейти до всіх звернень">
+        <img src="./icons/arrow-right.svg" alt="" aria-hidden="true" class="section-arrow-icon" />
+    </a>
+                </div>
+
+                <div class="applications-list" id="applications-list">
+                    <!-- JS will render application cards here -->
+                </div>
+            </section>
+
+            <section class="announcements-section">
+                <div class="section-header">
+                    <h2>Оголошення</h2>
+                    <a href="./announcements.html" class="section-arrow-link" aria-label="Перейти до всіх оголошень">
+        <img src="./icons/arrow-right.svg" alt="" aria-hidden="true" class="section-arrow-icon" />
+    </a>
+                </div>
+
+                <div class="announcements-list" id="announcements-list">
+                    <!-- JS will render announcement cards here -->
+                </div>
+            </section>
+        </main>
+
+       <footer class="bottom-nav">
+    <a href="./index.html" class="bottom-nav__item" aria-label="Головна">
+        <img src="./icons/home.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+    </a>
+
+    <a href="./explore.html" class="bottom-nav__item" aria-label="Пошук">
+        <img src="./icons/search.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+    </a>
+
+    <a href="./create.html" class="bottom-nav__item create-btn" aria-label="Створити">
+        <img src="./icons/plus.svg" alt="" aria-hidden="true" class="bottom-nav__icon plus-icon" />
+    </a>
+
+    <a href="./map.html" class="bottom-nav__item" aria-label="Карта">
+        <img src="./icons/Map.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+    </a>
+
+    <a href="./profile.html" class="bottom-nav__item" aria-label="Профіль">
+        <img src="./icons/profile.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+    </a>
+</footer>
+    </div>
+
+    <!-- EVENT CARD TEMPLATE -->
+    <template id="event-card-template">
+        <article class="event-card">
+            <a href="#" class="event-card-link">
+                <div class="event-image">
+                    <img src="" alt="" class="event-image-file" />
+                </div>
+
+                <div class="event-content">
+                    <h3 class="event-title"></h3>
+
+                    <div class="event-meta">
+                        <p class="event-date"></p>
+                        <p class="event-price"></p>
+                        <p class="event-location"></p>
+                    </div>
+                </div>
+            </a>
+        </article>
+    </template>
+
+    <!-- PUBLICATION CARD TEMPLATE -->
+    <template id="publication-card-template">
+        <article class="publication-card">
+            <div class="card-header">
+                <div class="author">
+                    <img src="" alt="" class="author-avatar" />
+                    <div class="author-info">
+                        <h3 class="author-name"></h3>
+                        <p class="publication-date"></p>
+                    </div>
+                </div>
+
+                <button class="more-btn" type="button">⋮</button>
+            </div>
+
+            <div class="card-body">
+                <div class="publication-text"></div>
+                <div class="publication-image">
+                    <img src="" alt="" class="publication-image-file" />
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <button type="button" class="action-btn" aria-label="Likes">
+                    <img src="./icons/heart.svg" alt="" class="action-icon" aria-hidden="true" />
+                    <span class="likes-count"></span>
+                </button>
+
+                <button type="button" class="action-btn" aria-label="Comments">
+                    <img src="./icons/comment.svg" alt="" class="action-icon" aria-hidden="true" />
+                    <span class="comments-count"></span>
+                </button>
+
+                <button type="button" class="action-btn" aria-label="Shares">
+                    <img src="./icons/share.svg" alt="" class="action-icon" aria-hidden="true" />
+                    <span class="shares-count"></span>
+                </button>
+            </div>
+            </div>
+        </article>
+    </template>
+
+    <!-- APPLICATION CARD TEMPLATE -->
+    <template id="application-card-template">
+        <article class="application-card">
+            <div class="application-top">
+                <div class="application-text-block">
+                    <h3 class="application-title"></h3>
+                </div>
+
+                <div class="application-image">
+                    <img src="" alt="" class="application-image-file" />
+                </div>
+            </div>
+
+            <div class="application-progress-box">
+                <div class="progress-header">
+                    <p class="application-status"></p>
+                    <a href="#" class="sign-btn">Підписати</a>
+                </div>
+
+                <p class="application-progress-text">
+                    <span class="current-signatures"></span> з
+                    <span class="goal-signatures"></span>
+                </p>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <!-- ANNOUNCEMENT CARD TEMPLATE -->
+    <template id="announcement-card-template">
+        <article class="announcement-card">
+            <div class="card-header">
+                <div class="author">
+                    <img src="" alt="" class="author-avatar" />
+                    <div class="author-info">
+                        <h3 class="author-name"></h3>
+                        <p class="announcement-date"></p>
+                    </div>
+                </div>
+
+                <button class="more-btn" type="button">⋮</button>
+            </div>
+
+            <div class="card-body">
+                <div class="announcement-text"></div>
+
+                <div class="announcement-image">
+                    <img src="" alt="" class="announcement-image-file" />
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="announcement-actions">
+                    <button type="button" class="action-btn" aria-label="Likes">
+                        <img src="./icons/heart.svg" alt="" class="action-icon" aria-hidden="true" />
+                        <span class="likes-count"></span>
+                    </button>
+
+                    <button type="button" class="action-btn" aria-label="Comments">
+                        <img src="./icons/comment.svg" alt="" class="action-icon" aria-hidden="true" />
+                        <span class="comments-count"></span>
+                    </button>
+
+                    <button type="button" class="action-btn" aria-label="Shares">
+                        <img src="./icons/share.svg" alt="" class="action-icon" aria-hidden="true" />
+                        <span class="shares-count"></span>
+                    </button>
+                </div>
+
+                <button type="button" class="message-btn">✉</button>
+            </div>
+        </article>
+    </template>
+</body>
+
+</html>

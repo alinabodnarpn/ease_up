@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Ease Up Components</title>
+</head>
+<body>
+    <main class="components-page">
+        <section class="components-section">
+            <h2>Publication card</h2>
+
+            <article class="publication-card">
+                <div class="card-header">
+                    <div class="author">
+                        <img src="./images/avatar.svg" alt="Аватар автора" class="author-avatar" />
+                        <div class="author-info">
+                            <h3 class="author-name">Ім’я автора</h3>
+                            <p class="publication-date">31 березня 2026</p>
+                        </div>
+                    </div>
+
+                    <button class="more-btn" type="button">⋮</button>
+                </div>
+
+                <div class="card-body">
+                    <div class="publication-text">
+                        Це приклад публікації для перевірки стилів.
+                    </div>
+
+                    <div class="publication-image">
+                        <img src="./images/post-image.svg" alt="Зображення публікації" class="publication-image-file" />
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="button" class="action-btn">
+                        <img src="./icons/heart.svg" alt="" class="action-icon" aria-hidden="true" />
+                        <span class="likes-count">25</span>
+                    </button>
+
+                    <button type="button" class="action-btn">
+                        <img src="./icons/comment.svg" alt="" class="action-icon" aria-hidden="true" />
+                        <span class="comments-count">8</span>
+                    </button>
+
+                    <button type="button" class="action-btn">
+                        <img src="./icons/share.svg" alt="" class="action-icon" aria-hidden="true" />
+                        <span class="shares-count">3</span>
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <section class="components-section">
+    <h2>Event card</h2>
+
+    <article class="event-card">
+        <a href="#" class="event-card-link">
+            <div class="event-image">
+                <img src="./images/event.svg" alt="Афіша події" class="event-image-file" />
+            </div>
+
+            <div class="event-content">
+                <h3 class="event-title">Антоніо Вівальді. Пори року</h3>
+
+                <div class="event-meta">
+                    <div class="event-meta-item">
+                        <img src="./icons/calendar.svg" alt="" class="event-meta-icon" aria-hidden="true" />
+                        <p class="event-date">29.11.24</p>
+                    </div>
+
+                    <div class="event-meta-item">
+                        <img src="./icons/price.svg" alt="" class="event-meta-icon" aria-hidden="true" />
+                        <p class="event-price">400 грн</p>
+                    </div>
+
+                    <div class="event-meta-item">
+                        <img src="./icons/location.svg" alt="" class="event-meta-icon" aria-hidden="true" />
+                        <p class="event-location">Національна Філармонія</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </article>
+</section>
+
+
+    </main>
+</body>
+</html>

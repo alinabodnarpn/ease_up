@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Публікації</title>
+</head>
+<body>
+    <main class="page">
+        <header class="page-header">
+            <a href="./index.html" class="page-header__back" aria-label="Назад">
+                <img src="./icons/arrow-left.svg" alt="" aria-hidden="true" class="page-header__icon" />
+            </a>
+
+            <h1 class="page-header__title">Публікації</h1>
+
+            <button class="page-header__action" type="button" aria-label="Фільтр">
+                <img src="./icons/filter.svg" alt="" aria-hidden="true" class="page-header__icon" />
+            </button>
+        </header>
+
+        <section class="page-content">
+            <div class="publications-list">
+                <article class="publication-card">
+                    <div class="card-header">
+                        <div class="author">
+                            <img src="./images/avatar.svg" alt="Аватар автора" class="author-avatar" />
+                            <div class="author-info">
+                                <h3 class="author-name">Karina</h3>
+                                <p class="publication-date">20.11.24</p>
+                            </div>
+                        </div>
+
+                        <button class="more-btn" type="button" aria-label="Більше">
+                            <img src="./icons/more-vertical.svg" alt="" aria-hidden="true" class="small-menu-icon" />
+                        </button>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="publication-text-block">
+                            <div class="publication-text">
+                                Відвідала Музей Науки у Львові. Щира рекомендація кожному бувати в цьому класному доступному місці!
+                            </div>
+                        </div>
+
+                        <div class="publication-image">
+                            <img src="./images/post-image.svg" alt="Зображення публікації" class="publication-image-file" />
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="button" class="action-btn" aria-label="Likes">
+                            <img src="./icons/heart.svg" alt="" class="action-icon" aria-hidden="true" />
+                            <span class="likes-count">45</span>
+                        </button>
+
+                        <button type="button" class="action-btn" aria-label="Comments">
+                            <img src="./icons/comment.svg" alt="" class="action-icon" aria-hidden="true" />
+                            <span class="comments-count">3</span>
+                        </button>
+
+                        <button type="button" class="action-btn" aria-label="Shares">
+                            <img src="./icons/share.svg" alt="" class="action-icon" aria-hidden="true" />
+                            <span class="shares-count">1</span>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="publication-card">
+                    <div class="card-header">
+                        <div class="author">
+                            <img src="./images/avatar.svg" alt="Аватар автора" class="author-avatar" />
+                            <div class="author-info">
+                                <h3 class="author-name">Sophia</h3>
+                                <p class="publication-date">20.11.24</p>
+                            </div>
+                        </div>
+
+                        <button class="more-btn" type="button" aria-label="Більше">
+                            <img src="./icons/more-vertical.svg" alt="" aria-hidden="true" class="small-menu-icon" />
+                        </button>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="publication-text-block">
+                            <div class="publication-text">
+                                В артцентрі ДЗИҐА на Вірменській зараз проходить цікава виставка. Вхід безкоштовний.
+                            </div>
+                        </div>
+
+                        <div class="publication-image">
+                            <img src="./images/post-image.svg" alt="Зображення публікації" class="publication-image-file" />
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="button" class="action-btn" aria-label="Likes">
+                            <img src="./icons/heart.svg" alt="" class="action-icon" aria-hidden="true" />
+                            <span class="likes-count">68</span>
+                        </button>
+
+                        <button type="button" class="action-btn" aria-label="Comments">
+                            <img src="./icons/comment.svg" alt="" class="action-icon" aria-hidden="true" />
+                            <span class="comments-count">7</span>
+                        </button>
+
+                        <button type="button" class="action-btn" aria-label="Shares">
+                            <img src="./icons/share.svg" alt="" class="action-icon" aria-hidden="true" />
+                            <span class="shares-count">3</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bottom-nav">
+        <a href="./index.html" class="bottom-nav__item" aria-label="Головна">
+            <img src="./icons/home.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+
+        <a href="./explore.html" class="bottom-nav__item" aria-label="Пошук">
+            <img src="./icons/search.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+
+        <a href="./create.html" class="bottom-nav__item create-btn" aria-label="Створити">
+            <img src="./icons/plus.svg" alt="" aria-hidden="true" class="bottom-nav__icon plus-icon" />
+        </a>
+
+        <a href="./map.html" class="bottom-nav__item" aria-label="Карта">
+            <img src="./icons/map.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+
+        <a href="./profile.html" class="bottom-nav__item" aria-label="Профіль">
+            <img src="./icons/profile.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+    </footer>
+</body>
+</html>

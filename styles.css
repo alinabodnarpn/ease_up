@@ -1,0 +1,422 @@
+/* Reset / base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #111111;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+/* Layout */
+.main-content {
+    padding: 20px;
+    padding-bottom: 120px;
+}
+
+/* Footer navigation */
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px 24px 28px;
+    background-color: #ffffff;
+    border-top: 1px solid #e9e9e9;
+    z-index: 1000;
+}
+
+.bottom-nav__item {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-nav__icon {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+.create-btn {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    min-height: 72px;
+    border-radius: 50%;
+    background-color: #4a6cf7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.plus-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+
+.publication-card,
+.announcement-card,
+.application-card,
+.event-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.publication-date,
+.announcement-date {
+    font-size: 13px;
+    color: #777777;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.publication-text,
+.announcement-text {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.publication-image-file,
+.announcement-image-file {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.card-footer {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.action-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* public card */
+.publication-card {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.author-name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111111;
+}
+
+.publication-date {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #8a8a8a;
+}
+
+.more-btn {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    color: #555555;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.card-body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.publication-text-block {
+    flex: 1;
+}
+
+.publication-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1a1a1a;
+}
+
+.publication-image {
+    width: 160px;
+    flex-shrink: 0;
+}
+
+.publication-image-file {
+    width: 100%;
+    height: 160px;
+    display: block;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 18px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333333;
+    padding: 0;
+}
+
+.action-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.components-page {
+    padding: 24px;
+    background-color: #f3f3f3;
+    min-height: 800px;
+}
+
+.components-section {
+    width: 100%;
+    max-width: 760px;
+    margin-bottom: 32px;
+}
+
+
+/* Event card */
+
+.event-card {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 18px;
+    margin-bottom: 24px;
+}
+
+.event-card-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.event-image {
+    width: 154px;
+    flex-shrink: 0;
+}
+
+.event-image-file {
+    width: 100%;
+    height: 154px;
+    display: block;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.event-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 4px;
+    min-width: 0;
+}
+
+.event-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #111111;
+}
+
+.event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.event-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.event-meta-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    flex-shrink: 0;
+    opacity: 0.45;
+}
+
+.event-date,
+.event-price,
+.event-location {
+    font-size: 16px;
+    line-height: 1.3;
+    color: #8d8d8d;
+}
+
+
+.page {
+    padding: 20px;
+    padding-bottom: 120px;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.page-header__back,
+.page-header__action {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.page-header__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111111;
+    text-align: center;
+    flex: 1;
+}
+
+.page-header__icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.events-list,
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.small-menu-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
