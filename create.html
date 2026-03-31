@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Створити публікацію</title>
+</head>
+<body>
+
+  <section id="publication-type-select" class="page create-page">
+    <header class="page-header create-page-header">
+      <h1 class="page-header__title">Створити публікацію</h1>
+    </header>
+
+    <main class="create-type-content">
+      <p class="create-type-label">Оберіть тип публікації</p>
+
+      <div class="create-type-buttons">
+        <button type="button" class="create-type-btn">Нова публікація</button>
+        <button type="button" class="create-type-btn">Нове оголошення</button>
+        <button type="button" class="create-type-btn">Створити маршрут</button>
+        <a href="#appeal-step1-personal-info" class="create-type-btn">Створити звернення</a>
+      </div>
+    </main>
+
+    <footer class="bottom-nav">
+      <a href="./index.html" class="bottom-nav__item" aria-label="Головна">
+        <img src="./icons/home.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./explore.html" class="bottom-nav__item" aria-label="Пошук">
+        <img src="./icons/search.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./create.html" class="bottom-nav__item create-btn" aria-label="Створити">
+        <img src="./icons/plus.svg" alt="" aria-hidden="true" class="bottom-nav__icon plus-icon" />
+      </a>
+      <a href="./map.html" class="bottom-nav__item" aria-label="Карта">
+        <img src="./icons/map.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./profile.html" class="bottom-nav__item" aria-label="Профіль">
+        <img src="./icons/profile.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+    </footer>
+  </section>
+
+  <section id="appeal-step1-personal-info" class="page">
+    <header class="page-header">
+      <a href="#publication-type-select" class="page-header__back" aria-label="Назад">
+        <img src="./icons/arrow-left.svg" alt="" aria-hidden="true" class="page-header__icon" />
+      </a>
+      <h1 class="page-header__title">Створити звернення</h1>
+      <div class="page-header__action"></div>
+    </header>
+
+    <div class="appeal-progress-label">Заповніть особисту інформацію</div>
+    <progress class="appeal-progress" value="1" max="3"></progress>
+
+    <form class="appeal-form">
+      <div class="appeal-field">
+        <label class="appeal-label" for="appeal-lastname">Прізвище <span class="appeal-required">*</span></label>
+        <input class="appeal-input" type="text" id="appeal-lastname" name="lastname" required />
+      </div>
+
+      <div class="appeal-field">
+        <label class="appeal-label" for="appeal-firstname">Ім'я <span class="appeal-required">*</span></label>
+        <input class="appeal-input" type="text" id="appeal-firstname" name="firstname" required />
+      </div>
+
+      <div class="appeal-field">
+        <label class="appeal-label" for="appeal-patronymic">По-батькові <span class="appeal-required">*</span></label>
+        <input class="appeal-input" type="text" id="appeal-patronymic" name="patronymic" required />
+      </div>
+
+      <div class="appeal-field">
+        <label class="appeal-label" for="appeal-city">Місто <span class="appeal-required">*</span></label>
+        <select class="appeal-input appeal-select" id="appeal-city" name="city" required>
+          <option value="lviv">Львів</option>
+          <option value="kyiv">Київ</option>
+          <option value="kharkiv">Харків</option>
+        </select>
+      </div>
+
+      <div class="appeal-fields-row">
+        <div class="appeal-field">
+          <label class="appeal-label" for="appeal-street">Вулиця</label>
+          <input class="appeal-input" type="text" id="appeal-street" name="street" />
+        </div>
+        <div class="appeal-field">
+          <label class="appeal-label" for="appeal-building">Будинок</label>
+          <input class="appeal-input" type="text" id="appeal-building" name="building" />
+        </div>
+      </div>
+
+      <div class="appeal-submit-row">
+        <a href="#appeal-step2-problem-description" class="appeal-btn">Продовжити</a>
+      </div>
+    </form>
+
+    <footer class="bottom-nav">
+      <a href="./index.html" class="bottom-nav__item" aria-label="Головна">
+        <img src="./icons/home.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./explore.html" class="bottom-nav__item" aria-label="Пошук">
+        <img src="./icons/search.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./create.html" class="bottom-nav__item create-btn" aria-label="Створити">
+        <img src="./icons/plus.svg" alt="" aria-hidden="true" class="bottom-nav__icon plus-icon" />
+      </a>
+      <a href="./map.html" class="bottom-nav__item" aria-label="Карта">
+        <img src="./icons/map.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./profile.html" class="bottom-nav__item" aria-label="Профіль">
+        <img src="./icons/profile.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+    </footer>
+  </section>
+
+  <section id="appeal-step2-problem-description" class="page">
+    <header class="page-header">
+      <a href="#appeal-step1-personal-info" class="page-header__back" aria-label="Назад">
+        <img src="./icons/arrow-left.svg" alt="" aria-hidden="true" class="page-header__icon" />
+      </a>
+      <h1 class="page-header__title">Створити звернення</h1>
+      <div class="page-header__action"></div>
+    </header>
+
+    <div class="appeal-progress-label">Опишіть проблему</div>
+    <progress class="appeal-progress" value="2" max="3"></progress>
+
+    <form class="appeal-form">
+      <div class="appeal-field">
+        <label class="appeal-label" for="appeal-category">Оберіть категорію звернення <span class="appeal-required">*</span></label>
+        <select class="appeal-input appeal-select" id="appeal-category" name="category" required>
+          <option value="ramps">Пандуси</option>
+          <option value="lifts">Ліфти та підйомники</option>
+          <option value="parking">Парковка</option>
+          <option value="sidewalks">Тротуари</option>
+          <option value="lights">Світлофори та переходи</option>
+          <option value="transport">Зупинки громадського транспорту</option>
+          <option value="toilets">Санітарні кімнати</option>
+        </select>
+      </div>
+
+      <div class="appeal-field">
+        <label class="appeal-label" for="appeal-description">Опис звернення</label>
+        <textarea class="appeal-input appeal-textarea" id="appeal-description" name="description" rows="6" placeholder="Опис звернення"></textarea>
+      </div>
+
+      <label class="appeal-checkbox-label">
+        <input type="checkbox" name="is_private" class="appeal-checkbox" />
+        Зробити звернення приватним
+      </label>
+
+      <div class="appeal-submit-row">
+        <a href="#appeal-step3-photo-and-address" class="appeal-btn">Продовжити</a>
+      </div>
+    </form>
+
+    <footer class="bottom-nav">
+      <a href="./index.html" class="bottom-nav__item" aria-label="Головна">
+        <img src="./icons/home.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./explore.html" class="bottom-nav__item" aria-label="Пошук">
+        <img src="./icons/search.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./create.html" class="bottom-nav__item create-btn" aria-label="Створити">
+        <img src="./icons/plus.svg" alt="" aria-hidden="true" class="bottom-nav__icon plus-icon" />
+      </a>
+      <a href="./map.html" class="bottom-nav__item" aria-label="Карта">
+        <img src="./icons/map.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./profile.html" class="bottom-nav__item" aria-label="Профіль">
+        <img src="./icons/profile.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+    </footer>
+  </section>
+
+  <section id="appeal-step3-photo-and-address" class="page">
+    <header class="page-header">
+      <a href="#appeal-step2-problem-description" class="page-header__back" aria-label="Назад">
+        <img src="./icons/arrow-left.svg" alt="" aria-hidden="true" class="page-header__icon" />
+      </a>
+      <h1 class="page-header__title">Створити звернення</h1>
+      <div class="page-header__action"></div>
+    </header>
+
+    <div class="appeal-progress-label">Додайте фото та адресу місця</div>
+    <progress class="appeal-progress" value="3" max="3"></progress>
+
+    <form class="appeal-form">
+      <div class="appeal-photo-grid">
+        <label class="appeal-photo-slot" for="appeal-photo1">
+          <img src="./icons/camera.svg" alt="" aria-hidden="true" class="appeal-photo-icon" />
+          <input type="file" id="appeal-photo1" name="photo1" accept="image/*" class="appeal-photo-input" />
+        </label>
+        <label class="appeal-photo-slot" for="appeal-photo2">
+          <img src="./icons/camera.svg" alt="" aria-hidden="true" class="appeal-photo-icon" />
+          <input type="file" id="appeal-photo2" name="photo2" accept="image/*" class="appeal-photo-input" />
+        </label>
+        <label class="appeal-photo-slot" for="appeal-photo3">
+          <img src="./icons/camera.svg" alt="" aria-hidden="true" class="appeal-photo-icon" />
+          <input type="file" id="appeal-photo3" name="photo3" accept="image/*" class="appeal-photo-input" />
+        </label>
+        <label class="appeal-photo-slot" for="appeal-photo4">
+          <img src="./icons/camera.svg" alt="" aria-hidden="true" class="appeal-photo-icon" />
+          <input type="file" id="appeal-photo4" name="photo4" accept="image/*" class="appeal-photo-input" />
+        </label>
+      </div>
+
+      <div class="appeal-field">
+        <label class="appeal-label" for="appeal-address">Адреса <span class="appeal-required">*</span></label>
+        <input class="appeal-input" type="text" id="appeal-address" name="address" placeholder="Назва вулиці, номер будинку" required />
+      </div>
+
+      <div class="appeal-submit-row">
+        <a href="#appeal-success" class="appeal-btn">Створити</a>
+      </div>
+    </form>
+
+    <footer class="bottom-nav">
+      <a href="./index.html" class="bottom-nav__item" aria-label="Головна">
+        <img src="./icons/home.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./explore.html" class="bottom-nav__item" aria-label="Пошук">
+        <img src="./icons/search.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./create.html" class="bottom-nav__item create-btn" aria-label="Створити">
+        <img src="./icons/plus.svg" alt="" aria-hidden="true" class="bottom-nav__icon plus-icon" />
+      </a>
+      <a href="./map.html" class="bottom-nav__item" aria-label="Карта">
+        <img src="./icons/map.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./profile.html" class="bottom-nav__item" aria-label="Профіль">
+        <img src="./icons/profile.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+    </footer>
+  </section>
+
+  <section id="appeal-success" class="page">
+    <header class="page-header">
+      <a href="#appeal-step3-photo-and-address" class="page-header__back" aria-label="Назад">
+        <img src="./icons/arrow-left.svg" alt="" aria-hidden="true" class="page-header__icon" />
+      </a>
+      <h1 class="page-header__title">Створити звернення</h1>
+      <div class="page-header__action"></div>
+    </header>
+
+    <div class="appeal-success-content">
+      <h2 class="appeal-success-title">Ваше звернення опубліковане і буде розглянуте місцевими органами влади найближчим часом.</h2>
+      <p class="appeal-success-subtitle">Дякуємо за те, що робите місто доступнішим для всіх!</p>
+      <small class="appeal-success-note">*Переглянути статус Ваших звернень можна в профілі користувача</small>
+      <a href="./applications.html" class="appeal-btn">До списку всіх звернень</a>
+    </div>
+
+    <footer class="bottom-nav">
+      <a href="./index.html" class="bottom-nav__item" aria-label="Головна">
+        <img src="./icons/home.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./explore.html" class="bottom-nav__item" aria-label="Пошук">
+        <img src="./icons/search.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./create.html" class="bottom-nav__item create-btn" aria-label="Створити">
+        <img src="./icons/plus.svg" alt="" aria-hidden="true" class="bottom-nav__icon plus-icon" />
+      </a>
+      <a href="./map.html" class="bottom-nav__item" aria-label="Карта">
+        <img src="./icons/map.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+      <a href="./profile.html" class="bottom-nav__item" aria-label="Профіль">
+        <img src="./icons/profile.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+      </a>
+    </footer>
+  </section>
+
+</body>
+</html>
