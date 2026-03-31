@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Пошук</title>
+  </head>
+  <body>
+    <div class="app-shell">
+
+      <main class="main-content">
+
+        <div class="explore-search-row">
+          <div class="search-bar">
+            <img src="./icons/search.svg" alt="" aria-hidden="true" class="search-bar__icon" />
+            <input
+              class="search-bar__input"
+              type="search"
+              placeholder="Пошук..."
+              aria-label="Пошук по сайту"
+            />
+          </div>
+          <button class="filter-btn" type="button" aria-label="Фільтр">
+            <img src="./icons/filter.svg" alt="" aria-hidden="true" />
+          </button>
+        </div>
+
+        <section class="explore-section">
+          <div class="section-header">
+            <h2>Категорії</h2>
+            <a href="#" class="section-arrow-link" aria-label="Всі категорії">
+              <img src="./icons/arrow-right.svg" alt="" aria-hidden="true" class="section-arrow-icon" />
+            </a>
+          </div>
+          <div class="categories-grid">
+            <a href="#" class="category-chip">
+              <img src="./icons/category-supermarket.svg" alt="" aria-hidden="true" class="category-chip__icon" />
+              <span>Супермаркети</span>
+            </a>
+            <a href="#" class="category-chip">
+              <img src="./icons/category-clothes.svg" alt="" aria-hidden="true" class="category-chip__icon" />
+              <span>Одяг</span>
+            </a>
+            <a href="#" class="category-chip">
+              <img src="./icons/category-pharmacy.svg" alt="" aria-hidden="true" class="category-chip__icon" />
+              <span>Аптеки</span>
+            </a>
+            <a href="#" class="category-chip">
+              <img src="./icons/category-restaurant.svg" alt="" aria-hidden="true" class="category-chip__icon" />
+              <span>Ресторани</span>
+            </a>
+            <a href="#" class="category-chip">
+              <img src="./icons/category-cafe.svg" alt="" aria-hidden="true" class="category-chip__icon" />
+              <span>Кав'ярні</span>
+            </a>
+            <a href="#" class="category-chip">
+              <img src="./icons/category-park.svg" alt="" aria-hidden="true" class="category-chip__icon" />
+              <span>Парки</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="explore-section">
+          <div class="section-header">
+            <h2>Популярні доступні місця</h2>
+            <a href="#" class="section-arrow-link" aria-label="Всі популярні місця">
+              <img src="./icons/arrow-right.svg" alt="" aria-hidden="true" class="section-arrow-icon" />
+            </a>
+          </div>
+          <div class="places-list">
+
+            <article class="place-card">
+              <div class="place-card__image">
+                <img src="./images/place-pinzel-museum.svg" alt="Музей Івана Георгія Пінзеля" class="place-card__img" />
+              </div>
+              <div class="place-card__content">
+                <h3 class="place-card__name">Музей Івана Георгія Пінзеля</h3>
+                <div class="place-card__rating">
+                  <img src="./icons/star.svg" alt="" aria-hidden="true" class="place-card__star" />
+                  <span class="place-card__rating-value">5.0</span>
+                </div>
+                <p class="place-card__type">Вид: збережена інфра</p>
+                <p class="place-card__address">
+                  <img src="./icons/location.svg" alt="" aria-hidden="true" class="place-card__addr-icon" />
+                  Площа Митна, 2
+                </p>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <div class="place-card__image">
+                <img src="./images/place-celentano.svg" alt="Pizza Celentano Futura" class="place-card__img" />
+              </div>
+              <div class="place-card__content">
+                <h3 class="place-card__name">Pizza Celentano Futura</h3>
+                <div class="place-card__rating">
+                  <img src="./icons/star.svg" alt="" aria-hidden="true" class="place-card__star" />
+                  <span class="place-card__rating-value">4.8</span>
+                </div>
+                <p class="place-card__type">Вид: збережена інфра</p>
+                <p class="place-card__address">
+                  <img src="./icons/location.svg" alt="" aria-hidden="true" class="place-card__addr-icon" />
+                  Вул. Культурна, 100 а
+                </p>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <div class="place-card__image">
+                <img src="./images/place-shoco.svg" alt="Shoco." class="place-card__img" />
+              </div>
+              <div class="place-card__content">
+                <h3 class="place-card__name">Shoco.</h3>
+                <div class="place-card__rating">
+                  <img src="./icons/star.svg" alt="" aria-hidden="true" class="place-card__star" />
+                  <span class="place-card__rating-value">4.6</span>
+                </div>
+                <p class="place-card__type">Вид: збережена інфра</p>
+                <p class="place-card__address">
+                  <img src="./icons/location.svg" alt="" aria-hidden="true" class="place-card__addr-icon" />
+                  Вул. Сяйво, 11
+                </p>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <div class="place-card__image">
+                <img src="./images/place-park-art-of-rest.svg" alt="Park. Art of Rest" class="place-card__img" />
+              </div>
+              <div class="place-card__content">
+                <h3 class="place-card__name">Park. Art of Rest</h3>
+                <div class="place-card__rating">
+                  <img src="./icons/star.svg" alt="" aria-hidden="true" class="place-card__star" />
+                  <span class="place-card__rating-value">4.6</span>
+                </div>
+                <p class="place-card__type">Вид: збережена інфра</p>
+                <p class="place-card__address">
+                  <img src="./icons/location.svg" alt="" aria-hidden="true" class="place-card__addr-icon" />
+                  Вул. Дмитра Вітовського, 43А
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+          <a href="./map.html" class="map-btn">
+            <img src="./icons/Map.svg" alt="" aria-hidden="true" class="map-btn__icon" />
+            Показати на мапі
+          </a>
+        </section>
+
+        <section class="explore-section">
+          <div class="section-header">
+            <h2>Топ доступних маршрутів</h2>
+            <a href="#" class="section-arrow-link" aria-label="Всі маршрути">
+              <img src="./icons/arrow-right.svg" alt="" aria-hidden="true" class="section-arrow-icon" />
+            </a>
+          </div>
+          <div class="routes-list">
+
+            <article class="route-card">
+              <img src="./images/route-1.svg" alt="Маршрут 1" class="route-card__img" />
+            </article>
+
+            <article class="route-card">
+              <img src="./images/route-2.svg" alt="Маршрут 2" class="route-card__img" />
+            </article>
+
+            <article class="route-card">
+              <img src="./images/route-3.svg" alt="Маршрут 3" class="route-card__img" />
+            </article>
+
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="bottom-nav">
+        <a href="./main.html" class="bottom-nav__item" aria-label="Головна">
+          <img src="./icons/home.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+        <a href="./explore.html" class="bottom-nav__item bottom-nav__item--active" aria-label="Пошук" aria-current="page">
+          <img src="./icons/search.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+        <a href="./create.html" class="bottom-nav__item create-btn" aria-label="Створити">
+          <img src="./icons/plus.svg" alt="" aria-hidden="true" class="bottom-nav__icon plus-icon" />
+        </a>
+        <a href="./map.html" class="bottom-nav__item" aria-label="Карта">
+          <img src="./icons/Map.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+        <a href="./profile.html" class="bottom-nav__item" aria-label="Профіль">
+          <img src="./icons/profile.svg" alt="" aria-hidden="true" class="bottom-nav__icon" />
+        </a>
+      </footer>
+
+    </div>
+  </body>
+</html>
