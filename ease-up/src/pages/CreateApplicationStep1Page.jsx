@@ -1,30 +1,36 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import InnerPageHeader from '../components/layout/InnerPageHeader';
 
 export default function CreateApplicationStep1Page() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     surname: '',
     name: '',
     middleName: '',
+    city: 'lviv',
+    street: '',
+    building: '',
   });
 
-  const handleChange = (field) => (event) => {
-    setForm((prev) => ({
-      ...prev,
-      [field]: event.target.value,
-    }));
+  const handleChange = (field) => (e) => {
+    setForm(prev => ({ ...prev, [field]: e.target.value }));
   };
+
+  const isValid = form.surname.trim() && form.name.trim() && form.middleName.trim();
 
   return (
     <main className="main-content">
-      <InnerPageHeader title="Створення звернення" showFilter={false} />
+      <InnerPageHeader title="Створити звернення" showFilter={false} />
+
+      <div className="appeal-progress-label">Заповніть особисту інформацію</div>
+      <div className="appeal-progress-bar">
+        <div className="appeal-progress-bar__fill" style={{ width: '33%' }} />
+      </div>
 
       <section className="form-page">
-        <div className="step-indicator">Крок 1 із 3</div>
-
         <label className="form-field">
-          <span className="form-label">Прізвище</span>
+          <span className="form-label">Прізвище <span className="form-required">*</span></span>
           <input
             className="form-input"
             value={form.surname}
@@ -34,17 +40,17 @@ export default function CreateApplicationStep1Page() {
         </label>
 
         <label className="form-field">
-          <span className="form-label">Ім’я</span>
+          <span className="form-label">Ім'я <span className="form-required">*</span></span>
           <input
             className="form-input"
             value={form.name}
             onChange={handleChange('name')}
-            placeholder="Введіть ім’я"
+            placeholder="Введіть ім'я"
           />
         </label>
 
         <label className="form-field">
-          <span className="form-label">По батькові</span>
+          <span className="form-label">По батькові <span className="form-required">*</span></span>
           <input
             className="form-input"
             value={form.middleName}
@@ -53,9 +59,47 @@ export default function CreateApplicationStep1Page() {
           />
         </label>
 
-        <Link to="/create/application/step-2" className="primary-wide-button">
-          Далі
-        </Link>
+        <label className="form-field">
+          <span className="form-label">Місто <span className="form-required">*</span></span>
+          <select
+            className="form-input form-select"
+            value={form.city}
+            onChange={handleChange('city')}
+          >
+            <option value="lviv">Львів</option>
+            <option value="kyiv">Київ</option>
+            <option value="kharkiv">Харків</option>
+          </select>
+        </label>
+
+        <div className="form-row">
+          <label className="form-field">
+            <span className="form-label">Вулиця</span>
+            <input
+              className="form-input"
+              value={form.street}
+              onChange={handleChange('street')}
+              placeholder="Вулиця"
+            />
+          </label>
+          <label className="form-field form-field--narrow">
+            <span className="form-label">Будинок</span>
+            <input
+              className="form-input"
+              value={form.building}
+              onChange={handleChange('building')}
+              placeholder="№"
+            />
+          </label>
+        </div>
+
+        <button
+          className={`primary-wide-button${!isValid ? ' primary-wide-button--disabled' : ''}`}
+          type="button"
+          onClick={() => isValid && navigate('/create/application/step-2')}
+        >
+          Продовжити
+        </button>
       </section>
     </main>
   );

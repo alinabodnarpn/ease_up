@@ -12,6 +12,9 @@ import ApplicationDetailsPage from '../pages/ApplicationDetailsPage';
 import ApplicationSignSuccessPage from '../pages/ApplicationSignSuccessPage';
 import CreatePublicationPage from '../pages/CreatePublicationPage';
 import CreateApplicationStep1Page from '../pages/CreateApplicationStep1Page';
+import CreateApplicationStep2Page from '../pages/CreateApplicationStep2Page';
+import CreateApplicationStep3Page from '../pages/CreateApplicationStep3Page';
+import CreateApplicationSuccessPage from '../pages/CreateApplicationSuccessPage';
 import CreateAnnouncementPage from '../pages/CreateAnnouncementPage';
 
 const router = createBrowserRouter([
@@ -19,20 +22,23 @@ const router = createBrowserRouter([
     path: '/',
     element: <MobileLayout />,
     children: [
-    { index: true, element: <HomePage /> },
-    { path: 'events', element: <EventsPage /> },
-    { path: 'publications', element: <PublicationsPage /> },
-    { path: 'applications', element: <ApplicationsPage /> },
-    { path: 'applications/:id', element: <ApplicationDetailsPage /> },
-    { path: 'applications/:id/signed', element: <ApplicationSignSuccessPage /> },
-    { path: 'announcements', element: <AnnouncementsPage /> },
-    { path: 'explore', element: <ExplorePage /> },
-    { path: 'profile', element: <ProfilePage /> },
-    { path: 'create', element: <CreateMenuPage /> },
-    { path: 'create/publication', element: <CreatePublicationPage /> },
-    { path: 'create/application/step-1', element: <CreateApplicationStep1Page /> },
-    { path: 'create/announcement', element: <CreateAnnouncementPage /> }
-    ]
+      { index: true, element: <HomePage /> },
+      { path: 'events', element: <EventsPage /> },
+      { path: 'publications', element: <PublicationsPage /> },
+      { path: 'applications', element: <ApplicationsPage /> },
+      { path: 'applications/:id', element: <ApplicationDetailsPage /> },
+      { path: 'applications/:id/signed', element: <ApplicationSignSuccessPage /> },
+      { path: 'announcements', element: <AnnouncementsPage /> },
+      { path: 'explore', element: <ExplorePage /> },
+      { path: 'profile', element: <ProfilePage /> },
+      { path: 'create', element: <CreateMenuPage /> },
+      { path: 'create/publication', element: <CreatePublicationPage /> },
+      { path: 'create/application/step-1', element: <CreateApplicationStep1Page /> },
+      { path: 'create/application/step-2', element: <CreateApplicationStep2Page /> },
+      { path: 'create/application/step-3', element: <CreateApplicationStep3Page /> },
+      { path: 'create/application/success', element: <CreateApplicationSuccessPage /> },
+      { path: 'create/announcement', element: <CreateAnnouncementPage /> },
+    ],
   },
 ]);
 
