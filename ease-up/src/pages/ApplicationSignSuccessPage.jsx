@@ -1,7 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import InnerPageHeader from '../components/layout/InnerPageHeader';
+import { useAppDispatch } from '../hooks/useAppContext';
 
 export default function ApplicationSignSuccessPage() {
+  const { id } = useParams();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'sign_application', id: Number(id) });
+  }, [dispatch, id]);
+
   return (
     <main className="main-content">
       <InnerPageHeader title="Підпис звернення" showFilter={false} />

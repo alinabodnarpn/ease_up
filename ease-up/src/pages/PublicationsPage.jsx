@@ -1,16 +1,26 @@
-import InnerPageHeader from '../components/layout/InnerPageHeader';
-import PublicationCard from '../components/cards/PublicationCard';
-
-export default function PublicationsPage() {
-  return (
-    <main className="main-content">
-      <InnerPageHeader title="Публікації" />
-
-      <section className="page-list">
-        <PublicationCard />
-        <PublicationCard />
-        <PublicationCard />
-      </section>
-    </main>
-  );
-}
+const publications = [
+  {
+    id: 1,
+    author: 'Karina',
+    date: '20.11.24',
+    title: 'Музей науки у Львові',
+    text: 'Відвідала Музей Науки у Львові. Щира рекомендація кожному бувати в цьому класному доступному місці!',
+    avatar: '/images/avatar.svg',
+    image: '/images/post-image.svg',
+    likes: 45,
+    comments: 3,
+    shares: 1,
+  },
+  {
+    id: 2,
+    author: 'Sophia',
+    date: '20.11.24',
+    title: 'Цікава виставка в ДЗИҐА',
+    text: 'В артцентрі ДЗИҐА на Вірменській зараз проходить цікава виставка. Вхід безкоштовний.',
+    avatar: '/images/avatar.svg',
+    image: '/images/post-image.svg',
+    likes: 68,
+    comments: 7,
+    shares: 3,
+  },
+];

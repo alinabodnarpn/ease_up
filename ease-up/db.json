@@ -1,0 +1,113 @@
+{
+  "heroPosts": [
+    {
+      "id": 1,
+      "title": "Львів доступний: як місто роблять безбар’єрним",
+      "tag": "Доступність",
+      "time": "2 хв",
+      "image": "/images/hero_photo.svg"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Антоніо Вівальді. Пори року",
+      "date": "29.11.24",
+      "price": "400 грн",
+      "location": "Національна Філармонія",
+      "image": "/images/event.svg"
+    },
+    {
+      "id": 2,
+      "title": "Концерт Maria Lui Quintet",
+      "date": "01.12.24",
+      "price": "500 грн",
+      "location": "Jam Factory Art Center",
+      "image": "/images/event.svg"
+    }
+  ],
+  "publications": [
+    {
+      "id": 1,
+      "author": "Karina",
+      "date": "20.11.24",
+      "text": "Відвідала Музей Науки у Львові. Щира рекомендація кожному бувати в цьому класному доступному місці!",
+      "avatar": "/images/avatar.svg",
+      "image": "/images/post-image.svg",
+      "likes": 45,
+      "comments": 3,
+      "shares": 1
+    },
+    {
+      "author": "Karina",
+      "date": "26.04.26",
+      "text": "публікація 1",
+      "avatar": "/images/avatar.svg",
+      "image": "/images/post-image.svg",
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "id": 2
+    },
+    {
+      "author": "Karina",
+      "date": "26.04.26",
+      "title": "Заголовок 2",
+      "text": "Публікація 2",
+      "avatar": "/images/avatar.svg",
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "image": null,
+      "id": 3
+    }
+  ],
+  "applications": [
+    {
+      "id": 1,
+      "category": "Ліфти та підйомники",
+      "author": "Короленко Катерина Сергіївна",
+      "text": "Прошу встановити пандус на вході будинку і підйомник на вході на вул. Джерельна, 21/12",
+      "address": "Джерельна, 21",
+      "image": "/images/application-1.png",
+      "status": "Триває збір підписів",
+      "current": 120,
+      "goal": 500,
+      "progress": 24
+    }
+  ],
+  "announcements": [
+    {
+      "id": 1,
+      "author": "Maks",
+      "date": "12.10.24",
+      "text": "Продаю крісло колісне. нове. в упаковці. Ціна договірна.",
+      "avatar": "/images/avatar-maks.png",
+      "image": "/images/announcement-1.png",
+      "likes": 31,
+      "comments": 10,
+      "shares": 3
+    },
+    {
+      "author": "Maks",
+      "date": "26.04.26",
+      "title": "bhjjh",
+      "text": "ghhjbhjb",
+      "avatar": "/images/avatar-maks.png",
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "image": null,
+      "id": 2
+    }
+  ],
+  "profile": {
+    "id": 1,
+    "name": "Karina",
+    "bio": "20 y.o. Art/sport/active lifestyle. Here to make new friends and plan new trips!",
+    "avatar": "/images/avatar.svg",
+    "posts": 20,
+    "friends": 20,
+    "subscriptions": 20
+  }
+}
