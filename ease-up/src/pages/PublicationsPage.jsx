@@ -24,3 +24,12 @@ const publications = [
     shares: 3,
   },
 ];
+export default function PublicationsPage() {
+  return (
+    <main className="main-content">
+      {publications.map(p => (
+        <div key={p.id}>{p.title}</div>
+      ))}
+    </main>
+  );
+}

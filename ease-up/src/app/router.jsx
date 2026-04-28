@@ -16,6 +16,10 @@ import CreateApplicationStep2Page from '../pages/CreateApplicationStep2Page';
 import CreateApplicationStep3Page from '../pages/CreateApplicationStep3Page';
 import CreateApplicationSuccessPage from '../pages/CreateApplicationSuccessPage';
 import CreateAnnouncementPage from '../pages/CreateAnnouncementPage';
+import ExploreCategoryPage from '../pages/explore/ExploreCategoryPage';
+import ExploreListPage     from '../pages/explore/ExploreListPage';
+import ExploreDetailPage   from '../pages/explore/ExploreDetailPage';
+import ExploreRatePage     from '../pages/explore/ExploreRatePage';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +34,10 @@ const router = createBrowserRouter([
       { path: 'applications/:id/signed', element: <ApplicationSignSuccessPage /> },
       { path: 'announcements', element: <AnnouncementsPage /> },
       { path: 'explore', element: <ExplorePage /> },
+      { path: 'explore/category/:slug',  element: <ExploreCategoryPage /> },
+      { path: 'explore/list/:type',      element: <ExploreListPage /> },
+      { path: 'explore/place/:id',       element: <ExploreDetailPage /> },
+      { path: 'explore/place/:id/rate',  element: <ExploreRatePage /> },
       { path: 'profile', element: <ProfilePage /> },
       { path: 'create', element: <CreateMenuPage /> },
       { path: 'create/publication', element: <CreatePublicationPage /> },
