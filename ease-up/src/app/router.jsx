@@ -5,7 +5,6 @@ import EventsPage from '../pages/EventsPage';
 import PublicationsPage from '../pages/PublicationsPage';
 import ApplicationsPage from '../pages/ApplicationsPage';
 import AnnouncementsPage from '../pages/AnnouncementsPage';
-import ExplorePage from '../pages/ExplorePage';
 import ProfilePage from '../pages/ProfilePage';
 import CreateMenuPage from '../pages/CreateMenuPage';
 import ApplicationDetailsPage from '../pages/ApplicationDetailsPage';
@@ -16,10 +15,14 @@ import CreateApplicationStep2Page from '../pages/CreateApplicationStep2Page';
 import CreateApplicationStep3Page from '../pages/CreateApplicationStep3Page';
 import CreateApplicationSuccessPage from '../pages/CreateApplicationSuccessPage';
 import CreateAnnouncementPage from '../pages/CreateAnnouncementPage';
+
+import ExplorePage from '../pages/explore/ExplorePage';
 import ExploreCategoryPage from '../pages/explore/ExploreCategoryPage';
-import ExploreListPage     from '../pages/explore/ExploreListPage';
-import ExploreDetailPage   from '../pages/explore/ExploreDetailPage';
-import ExploreRatePage     from '../pages/explore/ExploreRatePage';
+import ExploreListPage from '../pages/explore/ExploreListPage';
+import ExploreDetailPage from '../pages/explore/ExploreDetailPage';
+import ExploreRatePage from '../pages/explore/ExploreRatePage';
+import VolunteersPage from '../pages/explore/VolunteersPage';
+
 
 const router = createBrowserRouter([
   {
@@ -33,11 +36,7 @@ const router = createBrowserRouter([
       { path: 'applications/:id', element: <ApplicationDetailsPage /> },
       { path: 'applications/:id/signed', element: <ApplicationSignSuccessPage /> },
       { path: 'announcements', element: <AnnouncementsPage /> },
-      { path: 'explore', element: <ExplorePage /> },
-      { path: 'explore/category/:slug',  element: <ExploreCategoryPage /> },
-      { path: 'explore/list/:type',      element: <ExploreListPage /> },
-      { path: 'explore/place/:id',       element: <ExploreDetailPage /> },
-      { path: 'explore/place/:id/rate',  element: <ExploreRatePage /> },
+
       { path: 'profile', element: <ProfilePage /> },
       { path: 'create', element: <CreateMenuPage /> },
       { path: 'create/publication', element: <CreatePublicationPage /> },
@@ -46,6 +45,13 @@ const router = createBrowserRouter([
       { path: 'create/application/step-3', element: <CreateApplicationStep3Page /> },
       { path: 'create/application/success', element: <CreateApplicationSuccessPage /> },
       { path: 'create/announcement', element: <CreateAnnouncementPage /> },
+
+      { path: 'explore', element: <ExplorePage /> },
+      { path: 'explore/list/all', element: <ExploreListPage /> },
+      { path: 'explore/list/:slug', element: <ExploreCategoryPage /> },
+      { path: 'explore/volunteers', element: <VolunteersPage /> },
+      { path: 'explore/places/:id', element: <ExploreDetailPage /> },
+      { path: 'explore/places/:id/rate', element: <ExploreRatePage /> }
     ],
   },
 ]);

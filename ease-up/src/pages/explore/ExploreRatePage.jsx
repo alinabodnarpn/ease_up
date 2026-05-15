@@ -1,88 +1,104 @@
-import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import RatingQuestion from '../../components/explore/RatingQuestion';
+import { useMemo, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import InnerPageHeader from '../../components/layout/InnerPageHeader';
+import { submitPlaceRating } from '../../services/exploreApi';
 
-const QUESTIONS = [
+const questions = [
   'Чи є зручний тротуар або доріжка для підходу до будівлі?',
   'Чи є пандус на вході?',
   'Чи є автоматичні або легкі для відкривання двері?',
   'Чи є доступ до всіх важливих зон/поверхів у будівлі?',
   'Чи вільні проходи від зайвих перешкод?',
-  'Чи вдалося без сторонньої допомоги пересуватися по будівлі?',
+  'Чи вдалося без сторонньої допомоги дістатися до потрібних зон?',
 ];
 
 export default function ExploreRatePage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [starRating, setStarRating] = useState(0);
+
   const [answers, setAnswers] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+
+  const filledCount = useMemo(() => {
+    return Object.keys(answers).length;
+  }, [answers]);
 
   const handleAnswer = (index, value) => {
-    setAnswers(prev => ({ ...prev, [index]: value }));
+    setAnswers((prev) => ({
+      ...prev,
+      [index]: value,
+    }));
   };
 
-  const allAnswered = QUESTIONS.every((_, i) => answers[i]) && starRating > 0;
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitting(true);
 
-  const handleSubmit = () => {
-    // TODO: submitPlaceRating(id, { starRating, answers })
-    navigate(`/explore/place/${id}`);
+    try {
+      await submitPlaceRating(id, answers);
+      navigate(`/explore/places/${id}`);
+    } catch (error) {
+      console.error(error);
+      alert('Не вдалося надіслати оцінку');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
-    <main className="main-content" style={{ padding: '20px 20px 0', paddingBottom: 120 }}>
+    <main className="main-content">
+      <InnerPageHeader title="Оцінити місце" showFilter={false} />
 
-      {/* Header */}
-      <div className="page-header" style={{ marginBottom: 20 }}>
-        <button className="page-header__back" onClick={() => navigate(-1)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-          <img src="/icons/arrow-left.svg" alt="Назад" className="page-header__icon" />
+      <form className="explore-rate" onSubmit={handleSubmit}>
+        <div className="explore-rate__stars">
+          {'★'.repeat(Math.min(filledCount, 5))}
+          {'☆'.repeat(5 - Math.min(filledCount, 5))}
+        </div>
+
+        <div className="explore-rate__questions">
+          {questions.map((question, index) => {
+            const answer = answers[index];
+
+            return (
+              <div key={index} className="explore-rate__question-block">
+                <p className="explore-rate__question">
+                  {index + 1}. {question}
+                </p>
+
+                <div className="explore-rate__buttons">
+                  <button
+                    type="button"
+                    className={`explore-rate__answer ${
+                      answer === 'yes' ? 'explore-rate__answer--yes-active' : ''
+                    }`}
+                    onClick={() => handleAnswer(index, 'yes')}
+                  >
+                    Так
+                  </button>
+
+                  <button
+                    type="button"
+                    className={`explore-rate__answer ${
+                      answer === 'no' ? 'explore-rate__answer--no-active' : ''
+                    }`}
+                    onClick={() => handleAnswer(index, 'no')}
+                  >
+                    Ні
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <button
+          className="primary-wide-button"
+          type="submit"
+          disabled={submitting}
+        >
+          {submitting ? 'Надсилання...' : 'Надіслати'}
         </button>
-        <h1 className="page-header__title">Оцінити місце</h1>
-        <button className="page-header__action" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-          <img src="/icons/more.svg" alt="" className="page-header__icon" />
-        </button>
-      </div>
-
-      {/* Star rating */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 10, marginBottom: 28 }}>
-        {[1,2,3,4,5].map(i => (
-          <button
-            key={i}
-            onClick={() => setStarRating(i)}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-          >
-            <img
-              src="/icons/star.svg"
-              alt={`${i} зірка`}
-              style={{ width: 36, height: 36, opacity: i <= starRating ? 1 : 0.25 }}
-            />
-          </button>
-        ))}
-      </div>
-
-      {/* Questions */}
-      {QUESTIONS.map((q, i) => (
-        <RatingQuestion
-          key={i}
-          index={i}
-          question={q}
-          value={answers[i]}
-          onChange={(val) => handleAnswer(i, val)}
-        />
-      ))}
-
-      {/* Submit */}
-      <button
-        onClick={handleSubmit}
-        disabled={!allAnswered}
-        className="map-btn"
-        style={{
-          width: '100%', marginTop: 8, border: 'none', cursor: allAnswered ? 'pointer' : 'not-allowed',
-          opacity: allAnswered ? 1 : 0.5, fontFamily: 'inherit',
-        }}
-      >
-        Надіслати оцінку
-      </button>
-
+      </form>
     </main>
   );
 }

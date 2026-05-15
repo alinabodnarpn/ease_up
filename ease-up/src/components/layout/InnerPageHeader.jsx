@@ -1,20 +1,34 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function InnerPageHeader({ title, showFilter = true }) {
+export default function InnerPageHeader({
+  title,
+  showFilter = true,
+}) {
+  const navigate = useNavigate();
+
   return (
     <header className="inner-page-header">
-      <Link to="/" className="inner-page-header__back" aria-label="Назад">
-        <img src="/icons/arrow-left.svg" alt="" className="inner-page-header__icon" />
-      </Link>
+      <button
+        type="button"
+        className="inner-page-header__back"
+        aria-label="Назад"
+        onClick={() => navigate(-1)}
+      >
+        <img src="/icons/arrow-left.svg" alt="" />
+      </button>
 
       <h1 className="inner-page-header__title">{title}</h1>
 
       {showFilter ? (
-        <button className="inner-page-header__action" type="button" aria-label="Фільтр">
-          <img src="/icons/filter.svg" alt="" className="inner-page-header__icon" />
+        <button
+          type="button"
+          className="inner-page-header__filter"
+          aria-label="Фільтр"
+        >
+          <img src="/icons/filter.svg" alt="" />
         </button>
       ) : (
-        <div className="inner-page-header__action-placeholder"></div>
+        <div className="inner-page-header__spacer"></div>
       )}
     </header>
   );
