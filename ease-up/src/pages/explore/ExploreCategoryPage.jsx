@@ -55,7 +55,7 @@ export default function ExploreCategoryPage() {
         </div>
 
         <button type="button" className="explore-filter-btn" aria-label="Фільтр">
-          <img src="/icons/filter.svg" alt="" />
+          <img src="/icons/slider.png" alt="" />
         </button>
       </div>
 

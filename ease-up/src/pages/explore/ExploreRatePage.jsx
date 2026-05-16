@@ -32,13 +32,24 @@ export default function ExploreRatePage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (!id) {
+      alert('Не знайдено місце для оцінки');
+      return;
+    }
+
+    if (filledCount === 0) {
+      alert('Оберіть хоча б одну відповідь');
+      return;
+    }
+
     setSubmitting(true);
 
     try {
       await submitPlaceRating(id, answers);
       navigate(`/explore/places/${id}`);
     } catch (error) {
-      console.error(error);
+      console.error('Submit place rating failed:', error);
       alert('Не вдалося надіслати оцінку');
     } finally {
       setSubmitting(false);

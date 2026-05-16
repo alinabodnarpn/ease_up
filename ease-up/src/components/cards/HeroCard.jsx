@@ -1,26 +1,29 @@
-export default function HeroCard() {
+export default function HeroCard({
+  title,
+  tag,
+  time,
+  image,
+}) {
   return (
     <section className="hero-section">
-      <a href="/" className="hero-card">
+      <article className="hero-card">
         <div className="hero-card__image-wrapper">
           <img
-            src="/images/hero_photo.svg"
-            alt="Головний матеріал"
+            src={image}
+            alt={title}
             className="hero-card__image"
           />
         </div>
 
         <div className="hero-card__content">
-          <h1 className="hero-card__title">
-            Львів доступний: як місто роблять безбар’єрним
-          </h1>
+          <h1 className="hero-card__title">{title}</h1>
 
           <div className="hero-card__meta">
-            <span className="hero-card__tag">Доступність</span>
-            <span className="hero-card__time">2 хв</span>
+            <span className="hero-card__tag">{tag}</span>
+            <span className="hero-card__time">{time}</span>
           </div>
         </div>
-      </a>
+      </article>
     </section>
   );
 }

@@ -1,24 +1,28 @@
 import { useNavigate } from 'react-router-dom';
 import SectionHeader from '../components/sections/SectionHeader';
 import PublicationCard from '../components/cards/PublicationCard';
+import useFetch from '../hooks/useFetch';
+import { getPublications } from '../services/publicationsApi';
 import { useAppState } from '../hooks/useAppContext';
-
-const myPublication = {
-  id: 1,
-  author: 'Karina',
-  date: '20.11.24',
-  title: 'Музей науки у Львові',
-  text: 'Відвідала Музей Науки у Львові. Щира рекомендація кожному бувати в цьому класному доступному місці!',
-  avatar: '/images/avatar.svg',
-  image: '/images/post-image.svg',
-  likes: 45,
-  comments: 3,
-  shares: 1,
-};
 
 export default function ProfilePage() {
   const navigate = useNavigate();
-  const { user } = useAppState();
+
+  const {
+    user,
+    likedPublicationIds,
+    signedApplicationIds,
+  } = useAppState();
+
+  const {
+    data: publications,
+    loading,
+    error,
+  } = useFetch(getPublications, []);
+
+  const myPublications = publications?.filter(
+    (publication) => publication.author === user.name
+  );
 
   return (
     <main className="main-content">
@@ -29,7 +33,11 @@ export default function ProfilePage() {
           onClick={() => navigate(-1)}
           aria-label="Назад"
         >
-          <img src="/icons/arrow-left.svg" alt="" className="profile-header__icon" />
+          <img
+            src="/icons/arrow-left.svg"
+            alt=""
+            className="profile-header__icon"
+          />
         </button>
 
         <h1 className="profile-header__title">Мій профіль</h1>
@@ -39,7 +47,11 @@ export default function ProfilePage() {
           className="profile-header__icon-btn"
           aria-label="Меню профілю"
         >
-          <img src="/icons/menu.svg" alt="" className="profile-header__icon" />
+          <img
+            src="/icons/menu.svg"
+            alt=""
+            className="profile-header__icon"
+          />
         </button>
       </header>
 
@@ -58,24 +70,43 @@ export default function ProfilePage() {
 
         <div className="profile-page__stats">
           <div className="profile-page__stat-card">
-            <span className="profile-page__stat-number">20</span>
+            <span className="profile-page__stat-number">
+              {myPublications?.length || 0}
+            </span>
             <span className="profile-page__stat-label">публікацій</span>
           </div>
 
           <div className="profile-page__stat-card">
-            <span className="profile-page__stat-number">20</span>
-            <span className="profile-page__stat-label">друзів</span>
+            <span className="profile-page__stat-number">
+              {likedPublicationIds.length}
+            </span>
+            <span className="profile-page__stat-label">лайків</span>
           </div>
 
           <div className="profile-page__stat-card">
-            <span className="profile-page__stat-number">20</span>
-            <span className="profile-page__stat-label">підписок</span>
+            <span className="profile-page__stat-number">
+              {signedApplicationIds.length}
+            </span>
+            <span className="profile-page__stat-label">підписів</span>
           </div>
         </div>
 
         <section className="profile-page__posts-section">
           <SectionHeader title="Мої публікації" to="/publications" />
-          <PublicationCard {...myPublication} />
+
+          {loading && <p>Loading...</p>}
+          {error && <p>{error}</p>}
+
+          {myPublications?.length > 0 ? (
+            myPublications.map((publication) => (
+              <PublicationCard
+                key={publication.id}
+                {...publication}
+              />
+            ))
+          ) : (
+            !loading && <p className="empty-text">У вас ще немає публікацій.</p>
+          )}
         </section>
       </section>
     </main>

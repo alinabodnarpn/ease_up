@@ -31,6 +31,7 @@
       "id": 1,
       "author": "Karina",
       "date": "20.11.24",
+      "title": "Музей науки у Львові",
       "text": "Відвідала Музей Науки у Львові. Щира рекомендація кожному бувати в цьому класному доступному місці!",
       "avatar": "/images/avatar.svg",
       "image": "/images/post-image.svg",
@@ -39,38 +40,39 @@
       "shares": 1
     },
     {
-      "author": "Karina",
-      "date": "26.04.26",
-      "text": "публікація 1",
+      "id": 2,
+      "author": "Sophia",
+      "date": "20.11.24",
+      "title": "Цікава виставка в ДЗИҐА",
+      "text": "В артцентрі ДЗИҐА на Вірменській зараз проходить цікава виставка. Вхід безкоштовний.",
       "avatar": "/images/avatar.svg",
       "image": "/images/post-image.svg",
-      "likes": 0,
-      "comments": 0,
-      "shares": 0,
-      "id": 2
+      "likes": 68,
+      "comments": 7,
+      "shares": 3
+    },
+    {
+      "id": 3,
+      "author": "Maks",
+      "date": "21.11.24",
+      "title": "Доступне кафе в центрі",
+      "text": "Знайшов кафе з хорошим входом і зручним простором всередині. Персонал дуже привітний.",
+      "avatar": "/images/avatar-maks.png",
+      "image": "/images/post-image.svg",
+      "likes": 22,
+      "comments": 4,
+      "shares": 2
     },
     {
       "author": "Karina",
       "date": "26.04.26",
-      "title": "Заголовок 2",
-      "text": "Публікація 2",
-      "avatar": "/images/avatar.svg",
-      "likes": 0,
-      "comments": 0,
-      "shares": 0,
-      "image": null,
-      "id": 3
-    },
-    {
-      "author": "Karina",
-      "date": "26.04.26",
-      "title": "Публікація 4",
+      "title": "публікація",
       "text": "текст",
       "avatar": "/images/avatar.svg",
       "likes": 0,
       "comments": 0,
       "shares": 0,
-      "image": "blob:http://localhost:5173/56dcbd96-0d47-480a-93d9-32234a8a029f",
+      "image": null,
       "id": 4
     }
   ],
@@ -80,12 +82,30 @@
       "category": "Ліфти та підйомники",
       "author": "Короленко Катерина Сергіївна",
       "text": "Прошу встановити пандус на вході будинку і підйомник на вході на вул. Джерельна, 21/12",
-      "address": "Джерельна, 21",
+      "description": "Шановні представники органу влади! Мене звати Катерина, я є мешканкою будинку за адресою вул. Джерельна, 21/12. Звертаюся до вас із проханням розглянути питання встановлення підйомника на вході до цієї будівлі.",
+      "address": "Вул. Джерельна, 21",
       "image": "/images/application-1.png",
       "status": "Триває збір підписів",
       "current": 120,
       "goal": 500,
-      "progress": 24
+      "progress": 24,
+      "startDate": "20.11.24",
+      "daysLeft": 60
+    },
+    {
+      "id": 2,
+      "category": "Пандуси",
+      "author": "Іваненко Марія Петрівна",
+      "text": "Прошу облаштувати зручний пандус біля входу до громадської установи на вул. Зеленій.",
+      "description": "Вхід до установи має сходинки, через що людям на кріслах колісних та батькам з дитячими візочками складно потрапити всередину.",
+      "address": "Вул. Зелена, 14",
+      "image": "/images/application-1.png",
+      "status": "Триває збір підписів",
+      "current": 350,
+      "goal": 500,
+      "progress": 70,
+      "startDate": "23.11.24",
+      "daysLeft": 45
     }
   ],
   "announcements": [
@@ -93,7 +113,8 @@
       "id": 1,
       "author": "Maks",
       "date": "12.10.24",
-      "text": "Продаю крісло колісне. нове. в упаковці. Ціна договірна.",
+      "title": "Продам крісло колісне",
+      "text": "Продаю крісло колісне. Нове, в упаковці. Ціна договірна.",
       "avatar": "/images/avatar-maks.png",
       "image": "/images/announcement-1.png",
       "likes": 31,
@@ -101,152 +122,178 @@
       "shares": 3
     },
     {
+      "id": 2,
+      "author": "Ira",
+      "date": "15.10.24",
+      "title": "Віддам ходунки",
+      "text": "Віддам ходунки в хорошому стані. Самовивіз у Львові.",
+      "avatar": "/images/avatar.svg",
+      "image": "/images/announcement-1.png",
+      "likes": 12,
+      "comments": 4,
+      "shares": 1
+    },
+    {
       "author": "Maks",
       "date": "26.04.26",
-      "title": "bhjjh",
-      "text": "ghhjbhjb",
+      "title": "оголошення",
+      "text": "процулрвтсв",
       "avatar": "/images/avatar-maks.png",
       "likes": 0,
       "comments": 0,
       "shares": 0,
       "image": null,
-      "id": 2
+      "id": 3
     }
   ],
-  "profile": {
-    "id": 1,
-    "name": "Karina",
-    "bio": "20 y.o. Art/sport/active lifestyle. Here to make new friends and plan new trips!",
-    "avatar": "/images/avatar.svg",
-    "posts": 20,
-    "friends": 20,
-    "subscriptions": 20
-  },
   "places": [
     {
       "id": 1,
       "title": "Музей Івана Георгія Пінзеля",
-      "description": "Вхід, вбиральня, ліфти",
+      "description": "Доступний вхід, просторий зал, є можливість пересування на кріслі колісному.",
       "address": "Площа Митна, 2",
       "image": "/images/place-pinzel-museum.svg",
-      "rating": "5.0",
+      "rating": "2.5",
+      "ratingsCount": 2,
       "category": "museum",
-      "popular": true
+      "popular": true,
+      "features": [
+        "Доступний вхід",
+        "Просторий зал",
+        "Поруч зупинка"
+      ]
     },
     {
       "id": 2,
-      "title": "Jam Factory Art Center",
-      "description": "Вхід, вбиральня, ліфти",
-      "address": "Вул. Б. Хмельницького, 124",
-      "image": "/images/place-shoco.svg",
-      "rating": "4.3",
-      "category": "museum",
-      "popular": true
+      "title": "Celentano Ristorante",
+      "description": "Заклад у центрі міста зі зручним входом і достатнім простором між столиками.",
+      "address": "Площа Ринок, 16",
+      "image": "/images/place-celentano.svg",
+      "rating": "4.8",
+      "ratingsCount": 1,
+      "category": "food",
+      "popular": true,
+      "features": [
+        "Зручний вхід",
+        "Просторий зал",
+        "Дружній персонал"
+      ]
     },
     {
       "id": 3,
-      "title": "Celentano",
-      "description": "Зручний вхід та персонал",
-      "address": "Львів, центр",
-      "image": "/images/place-celentano.svg",
-      "rating": "4.7",
-      "category": "restaurant",
-      "popular": true
+      "title": "Музей Науки",
+      "description": "Інтерактивний простір із доступним входом та зручним пересуванням усередині.",
+      "address": "Вул. Стрийська, 200",
+      "image": "/images/place-science-museum.svg",
+      "rating": "4.9",
+      "ratingsCount": 1,
+      "category": "museum",
+      "popular": true,
+      "features": [
+        "Ліфт",
+        "Доступний вхід",
+        "Інклюзивний простір"
+      ]
     },
     {
       "id": 4,
-      "title": "Shoco",
-      "description": "Доступний вхід і персонал",
-      "address": "Вул. Сахарова, 44",
-      "image": "/images/place-shoco.svg",
-      "rating": "4.6",
-      "category": "cafe",
-      "popular": false
-    },
-    {
-      "id": 5,
-      "title": "Park. Art of Rest",
-      "description": "Зручне доступне місце для відпочинку",
-      "address": "Вул. Дмитра Вітовського, 43А",
-      "image": "/images/place-park-art-of-rest.svg",
-      "rating": "4.5",
-      "category": "park",
-      "popular": false
-    },
-    {
-      "id": 6,
-      "title": "Сенсотека",
-      "description": "Інклюзивний простір і доступний вхід",
-      "address": "Вул. Уласа Самчука, 22",
-      "image": "/images/place-shoco.svg",
+      "title": "Jam Factory Art Center",
+      "description": "Сучасний артпростір з подіями, виставками та доступним входом.",
+      "address": "Вул. Богдана Хмельницького, 124",
+      "image": "/images/place-jam-factory.svg",
       "rating": "4.7",
-      "category": "museum",
-      "popular": false
-    },
-    {
-      "id": 7,
-      "title": "Сільпо",
-      "description": "Широкі проходи та доступний вхід",
-      "address": "Вул. Джерельна, 20",
-      "image": "/images/place-celentano.svg",
-      "rating": "4.8",
-      "category": "supermarket",
-      "popular": false
-    },
-    {
-      "id": 8,
-      "title": "Аптека D.S.",
-      "description": "Зручний вхід, є пандус",
-      "address": "Вул. Кульпарківська, 100",
-      "image": "/images/place-shoco.svg",
-      "rating": "4.4",
-      "category": "pharmacy",
-      "popular": false
-    },
-    {
-      "id": 9,
-      "title": "Reserved",
-      "description": "Доступний магазин одягу",
-      "address": "ТРЦ Victoria Gardens",
-      "image": "/images/place-celentano.svg",
-      "rating": "4.2",
-      "category": "clothes",
-      "popular": false
+      "ratingsCount": 1,
+      "category": "art",
+      "popular": false,
+      "features": [
+        "Доступний вхід",
+        "Ліфт",
+        "Події"
+      ]
     }
   ],
   "routes": [
     {
       "id": 1,
-      "title": "Мальовничими парками",
-      "description": "Короткий маршрут вихідного дня",
-      "duration": "2 год",
-      "rating": "4.9",
-      "image": "/images/route-1.svg"
+      "title": "Маршрут центром Львова",
+      "description": "Зручний маршрут через центральні доступні локації міста.",
+      "duration": "45 хв",
+      "distance": "2.4 км",
+      "image": "/images/route-1.svg",
+      "rating": "4.9"
     },
     {
       "id": 2,
-      "title": "Музеї Львова",
-      "description": "Духовне збагачення особистості",
-      "duration": "3 год",
-      "rating": "5.0",
-      "image": "/images/route-2.svg"
+      "title": "Культурний маршрут",
+      "description": "Маршрут через музеї, галереї та артпростори з доступним входом.",
+      "duration": "1 год 20 хв",
+      "distance": "3.1 км",
+      "image": "/images/route-1.svg",
+      "rating": "4.8"
     }
   ],
   "volunteers": [
     {
       "id": 1,
       "name": "Христина",
-      "role": "Координаторка доступних івентів",
+      "role": "Координаторка доступних подій",
       "rating": "5.0",
-      "avatar": "/images/avatar.svg"
+      "avatar": "/images/avatar.svg",
+      "description": "Допомагає з супроводом на культурні події та маршрути містом."
     },
     {
       "id": 2,
-      "name": "Ольга",
-      "role": "Психологиня",
-      "rating": "4.8",
-      "avatar": "/images/avatar.svg"
+      "name": "Олег",
+      "role": "Волонтер супроводу",
+      "rating": "4.9",
+      "avatar": "/images/avatar-maks.png",
+      "description": "Може допомогти з пересуванням містом і супроводом до локацій."
     }
   ],
-  "ratings": []
+  "placeRatings": [
+    {
+      "id": 1,
+      "placeId": 1,
+      "entrance": "good",
+      "restroom": "yes",
+      "staff": "yes",
+      "comments": "Місце досить зручне, персонал допоміг зорієнтуватися."
+    },
+    {
+      "placeId": 1,
+      "createdAt": "2026-05-16T18:20:34.655Z",
+      "answers": {
+        "0": "yes",
+        "1": "no",
+        "2": "yes",
+        "3": "yes",
+        "4": "yes",
+        "5": "yes"
+      },
+      "id": 2
+    },
+    {
+      "placeId": 1,
+      "createdAt": "2026-05-16T18:41:59.168Z",
+      "rating": 0,
+      "answers": {
+        "0": "no",
+        "1": "no",
+        "2": "no",
+        "3": "no",
+        "4": "no",
+        "5": "no"
+      },
+      "id": 3
+    }
+  ],
+  "profile": {
+    "id": 1,
+    "name": "Karina",
+    "bio": "20 y.o. Art/sport/active lifestyle.",
+    "avatar": "/images/avatar.svg",
+    "posts": 1,
+    "friends": 20,
+    "subscriptions": 20
+  }
 }

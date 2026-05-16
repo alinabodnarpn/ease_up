@@ -8,7 +8,10 @@ export default function ApplicationSignSuccessPage() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch({ type: 'sign_application', id: Number(id) });
+    dispatch({
+      type: 'sign_application',
+      id: Number(id),
+    });
   }, [dispatch, id]);
 
   return (
@@ -16,7 +19,9 @@ export default function ApplicationSignSuccessPage() {
       <InnerPageHeader title="Підпис звернення" showFilter={false} />
 
       <section className="success-page">
-        <h2 className="success-page__title">Звернення було успішно підписано.</h2>
+        <h2 className="success-page__title">
+          Звернення було успішно підписано.
+        </h2>
 
         <p className="success-page__subtitle">
           Дякуємо за те, що робите місто доступнішим для всіх!
