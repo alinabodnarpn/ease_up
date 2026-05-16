@@ -12,9 +12,6 @@ export default function HomeHeader() {
         </div>
       </div>
 
-      <button className="home-notification-btn" type="button" aria-label="Сповіщення">
-        <img src="/icons/bell.svg" alt="" className="home-notification__icon" />
-      </button>
     </header>
   );
 }

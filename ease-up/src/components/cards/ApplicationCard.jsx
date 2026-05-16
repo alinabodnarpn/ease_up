@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useAppState } from '../../hooks/useAppContext';
 
 export default function ApplicationCard({
   id,
@@ -9,6 +10,9 @@ export default function ApplicationCard({
   goal,
   progress,
 }) {
+  const { signedApplicationIds } = useAppState();
+  const isSigned = signedApplicationIds.includes(id);
+
   return (
     <Link to={`/applications/${id}`} className="application-card-link">
       <article className="application-card">
@@ -29,7 +33,9 @@ export default function ApplicationCard({
         <div className="application-card__progress-box">
           <div className="application-card__progress-header">
             <span className="application-card__status">{status}</span>
-            <span className="application-card__button">Підписати</span>
+            <span className="application-card__button">
+              {isSigned ? 'Підписано' : 'Підписати'}
+            </span>
           </div>
 
           <div className="application-card__count">

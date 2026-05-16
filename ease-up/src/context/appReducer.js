@@ -2,9 +2,15 @@ export const initialState = {
   user: {
     name: 'Karina',
     avatar: '/images/avatar.svg',
+    bio: '20 y.o. Art/sport/active lifestyle.',
   },
   likedPublicationIds: [],
   signedApplicationIds: [],
+  applicationDraft: {
+    step1: {},
+    step2: {},
+    step3: {},
+  },
 };
 
 export function appReducer(state, action) {
@@ -23,6 +29,25 @@ export function appReducer(state, action) {
         signedApplicationIds: state.signedApplicationIds.includes(action.id)
           ? state.signedApplicationIds
           : [...state.signedApplicationIds, action.id],
+      };
+
+    case 'save_application_step':
+      return {
+        ...state,
+        applicationDraft: {
+          ...state.applicationDraft,
+          [action.step]: action.payload,
+        },
+      };
+
+    case 'clear_application_draft':
+      return {
+        ...state,
+        applicationDraft: {
+          step1: {},
+          step2: {},
+          step3: {},
+        },
       };
 
     default:

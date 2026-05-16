@@ -60,6 +60,18 @@
       "shares": 0,
       "image": null,
       "id": 3
+    },
+    {
+      "author": "Karina",
+      "date": "26.04.26",
+      "title": "Публікація 4",
+      "text": "текст",
+      "avatar": "/images/avatar.svg",
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "image": "blob:http://localhost:5173/56dcbd96-0d47-480a-93d9-32234a8a029f",
+      "id": 4
     }
   ],
   "applications": [
@@ -111,130 +123,130 @@
     "subscriptions": 20
   },
   "places": [
-  {
-    "id": 1,
-    "title": "Музей Івана Георгія Пінзеля",
-    "description": "Вхід, вбиральня, ліфти",
-    "address": "Площа Митна, 2",
-    "image": "/images/place-pinzel-museum.svg",
-    "rating": "5.0",
-    "category": "museum",
-    "popular": true
-  },
-  {
-    "id": 2,
-    "title": "Jam Factory Art Center",
-    "description": "Вхід, вбиральня, ліфти",
-    "address": "Вул. Б. Хмельницького, 124",
-    "image": "/images/place-shoco.svg",
-    "rating": "4.3",
-    "category": "museum",
-    "popular": true
-  },
-  {
-    "id": 3,
-    "title": "Celentano",
-    "description": "Зручний вхід та персонал",
-    "address": "Львів, центр",
-    "image": "/images/place-celentano.svg",
-    "rating": "4.7",
-    "category": "restaurant",
-    "popular": true
-  },
-  {
-    "id": 4,
-    "title": "Shoco",
-    "description": "Доступний вхід і персонал",
-    "address": "Вул. Сахарова, 44",
-    "image": "/images/place-shoco.svg",
-    "rating": "4.6",
-    "category": "cafe",
-    "popular": false
-  },
-  {
-    "id": 5,
-    "title": "Park. Art of Rest",
-    "description": "Зручне доступне місце для відпочинку",
-    "address": "Вул. Дмитра Вітовського, 43А",
-    "image": "/images/place-park-art-of-rest.svg",
-    "rating": "4.5",
-    "category": "park",
-    "popular": false
-  },
-  {
-    "id": 6,
-    "title": "Сенсотека",
-    "description": "Інклюзивний простір і доступний вхід",
-    "address": "Вул. Уласа Самчука, 22",
-    "image": "/images/place-shoco.svg",
-    "rating": "4.7",
-    "category": "museum",
-    "popular": false
-  },
-  {
-    "id": 7,
-    "title": "Сільпо",
-    "description": "Широкі проходи та доступний вхід",
-    "address": "Вул. Джерельна, 20",
-    "image": "/images/place-celentano.svg",
-    "rating": "4.8",
-    "category": "supermarket",
-    "popular": false
-  },
-  {
-    "id": 8,
-    "title": "Аптека D.S.",
-    "description": "Зручний вхід, є пандус",
-    "address": "Вул. Кульпарківська, 100",
-    "image": "/images/place-shoco.svg",
-    "rating": "4.4",
-    "category": "pharmacy",
-    "popular": false
-  },
-  {
-    "id": 9,
-    "title": "Reserved",
-    "description": "Доступний магазин одягу",
-    "address": "ТРЦ Victoria Gardens",
-    "image": "/images/place-celentano.svg",
-    "rating": "4.2",
-    "category": "clothes",
-    "popular": false
-  }
-],
-"routes": [
-  {
-    "id": 1,
-    "title": "Мальовничими парками",
-    "description": "Короткий маршрут вихідного дня",
-    "duration": "2 год",
-    "rating": "4.9",
-    "image": "/images/route-1.svg"
-  },
-  {
-    "id": 2,
-    "title": "Музеї Львова",
-    "description": "Духовне збагачення особистості",
-    "duration": "3 год",
-    "rating": "5.0",
-    "image": "/images/route-2.svg"
-  }
-],
-"volunteers": [
-  {
-    "id": 1,
-    "name": "Христина",
-    "role": "Координаторка доступних івентів",
-    "rating": "5.0",
-    "avatar": "/images/avatar.svg"
-  },
-  {
-    "id": 2,
-    "name": "Ольга",
-    "role": "Психологиня",
-    "rating": "4.8",
-    "avatar": "/images/avatar.svg"
-  }
-],
-"ratings": []
+    {
+      "id": 1,
+      "title": "Музей Івана Георгія Пінзеля",
+      "description": "Вхід, вбиральня, ліфти",
+      "address": "Площа Митна, 2",
+      "image": "/images/place-pinzel-museum.svg",
+      "rating": "5.0",
+      "category": "museum",
+      "popular": true
+    },
+    {
+      "id": 2,
+      "title": "Jam Factory Art Center",
+      "description": "Вхід, вбиральня, ліфти",
+      "address": "Вул. Б. Хмельницького, 124",
+      "image": "/images/place-shoco.svg",
+      "rating": "4.3",
+      "category": "museum",
+      "popular": true
+    },
+    {
+      "id": 3,
+      "title": "Celentano",
+      "description": "Зручний вхід та персонал",
+      "address": "Львів, центр",
+      "image": "/images/place-celentano.svg",
+      "rating": "4.7",
+      "category": "restaurant",
+      "popular": true
+    },
+    {
+      "id": 4,
+      "title": "Shoco",
+      "description": "Доступний вхід і персонал",
+      "address": "Вул. Сахарова, 44",
+      "image": "/images/place-shoco.svg",
+      "rating": "4.6",
+      "category": "cafe",
+      "popular": false
+    },
+    {
+      "id": 5,
+      "title": "Park. Art of Rest",
+      "description": "Зручне доступне місце для відпочинку",
+      "address": "Вул. Дмитра Вітовського, 43А",
+      "image": "/images/place-park-art-of-rest.svg",
+      "rating": "4.5",
+      "category": "park",
+      "popular": false
+    },
+    {
+      "id": 6,
+      "title": "Сенсотека",
+      "description": "Інклюзивний простір і доступний вхід",
+      "address": "Вул. Уласа Самчука, 22",
+      "image": "/images/place-shoco.svg",
+      "rating": "4.7",
+      "category": "museum",
+      "popular": false
+    },
+    {
+      "id": 7,
+      "title": "Сільпо",
+      "description": "Широкі проходи та доступний вхід",
+      "address": "Вул. Джерельна, 20",
+      "image": "/images/place-celentano.svg",
+      "rating": "4.8",
+      "category": "supermarket",
+      "popular": false
+    },
+    {
+      "id": 8,
+      "title": "Аптека D.S.",
+      "description": "Зручний вхід, є пандус",
+      "address": "Вул. Кульпарківська, 100",
+      "image": "/images/place-shoco.svg",
+      "rating": "4.4",
+      "category": "pharmacy",
+      "popular": false
+    },
+    {
+      "id": 9,
+      "title": "Reserved",
+      "description": "Доступний магазин одягу",
+      "address": "ТРЦ Victoria Gardens",
+      "image": "/images/place-celentano.svg",
+      "rating": "4.2",
+      "category": "clothes",
+      "popular": false
+    }
+  ],
+  "routes": [
+    {
+      "id": 1,
+      "title": "Мальовничими парками",
+      "description": "Короткий маршрут вихідного дня",
+      "duration": "2 год",
+      "rating": "4.9",
+      "image": "/images/route-1.svg"
+    },
+    {
+      "id": 2,
+      "title": "Музеї Львова",
+      "description": "Духовне збагачення особистості",
+      "duration": "3 год",
+      "rating": "5.0",
+      "image": "/images/route-2.svg"
+    }
+  ],
+  "volunteers": [
+    {
+      "id": 1,
+      "name": "Христина",
+      "role": "Координаторка доступних івентів",
+      "rating": "5.0",
+      "avatar": "/images/avatar.svg"
+    },
+    {
+      "id": 2,
+      "name": "Ольга",
+      "role": "Психологиня",
+      "rating": "4.8",
+      "avatar": "/images/avatar.svg"
+    }
+  ],
+  "ratings": []
 }

@@ -1470,3 +1470,12 @@ body {
 .explore-rate__answer--no-active {
   background: #ff3b3b;
 }
+
+.publication-card__action--button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

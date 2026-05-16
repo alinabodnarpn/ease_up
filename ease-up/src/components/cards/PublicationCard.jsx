@@ -1,4 +1,7 @@
+import { useAppDispatch, useAppState } from '../../hooks/useAppContext';
+
 export default function PublicationCard({
+  id,
   author,
   date,
   title,
@@ -9,6 +12,12 @@ export default function PublicationCard({
   comments,
   shares,
 }) {
+  const dispatch = useAppDispatch();
+  const { likedPublicationIds } = useAppState();
+
+  const isLiked = likedPublicationIds.includes(id);
+  const displayedLikes = isLiked ? likes + 1 : likes;
+
   return (
     <article className="publication-card">
       <div className="publication-card__header">
@@ -48,18 +57,35 @@ export default function PublicationCard({
       </div>
 
       <div className="publication-card__footer">
-        <div className="publication-card__action">
-          <img src="/icons/heart.svg" alt="" className="publication-card__action-icon" />
-          <span>{likes}</span>
-        </div>
+        <button
+          type="button"
+          className="publication-card__action publication-card__action--button"
+          onClick={() => dispatch({ type: 'toggle_like', id })}
+          aria-label="Лайкнути публікацію"
+        >
+          <img
+            src="/icons/heart.svg"
+            alt=""
+            className="publication-card__action-icon"
+          />
+          <span>{displayedLikes}</span>
+        </button>
 
         <div className="publication-card__action">
-          <img src="/icons/comment.svg" alt="" className="publication-card__action-icon" />
+          <img
+            src="/icons/comment.svg"
+            alt=""
+            className="publication-card__action-icon"
+          />
           <span>{comments}</span>
         </div>
 
         <div className="publication-card__action">
-          <img src="/icons/share.svg" alt="" className="publication-card__action-icon" />
+          <img
+            src="/icons/share.svg"
+            alt=""
+            className="publication-card__action-icon"
+          />
           <span>{shares}</span>
         </div>
       </div>

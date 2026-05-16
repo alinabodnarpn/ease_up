@@ -1,9 +1,24 @@
 import { useNavigate } from 'react-router-dom';
 import SectionHeader from '../components/sections/SectionHeader';
 import PublicationCard from '../components/cards/PublicationCard';
+import { useAppState } from '../hooks/useAppContext';
+
+const myPublication = {
+  id: 1,
+  author: 'Karina',
+  date: '20.11.24',
+  title: 'Музей науки у Львові',
+  text: 'Відвідала Музей Науки у Львові. Щира рекомендація кожному бувати в цьому класному доступному місці!',
+  avatar: '/images/avatar.svg',
+  image: '/images/post-image.svg',
+  likes: 45,
+  comments: 3,
+  shares: 1,
+};
 
 export default function ProfilePage() {
   const navigate = useNavigate();
+  const { user } = useAppState();
 
   return (
     <main className="main-content">
@@ -31,16 +46,14 @@ export default function ProfilePage() {
       <section className="profile-page">
         <div className="profile-page__top">
           <img
-            src="/images/avatar.svg"
-            alt="Karina"
+            src={user.avatar}
+            alt={user.name}
             className="profile-page__avatar"
           />
 
-          <h2 className="profile-page__name">Karina</h2>
+          <h2 className="profile-page__name">{user.name}</h2>
 
-          <p className="profile-page__bio">
-            20 y.o. Art/sport/active lifestyle. Here to make new friends and plan new trips!
-          </p>
+          <p className="profile-page__bio">{user.bio}</p>
         </div>
 
         <div className="profile-page__stats">
@@ -62,7 +75,7 @@ export default function ProfilePage() {
 
         <section className="profile-page__posts-section">
           <SectionHeader title="Мої публікації" to="/publications" />
-          <PublicationCard />
+          <PublicationCard {...myPublication} />
         </section>
       </section>
     </main>
