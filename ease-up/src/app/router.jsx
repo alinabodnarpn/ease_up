@@ -22,6 +22,7 @@ import ExploreListPage from '../pages/explore/ExploreListPage';
 import ExploreDetailPage from '../pages/explore/ExploreDetailPage';
 import ExploreRatePage from '../pages/explore/ExploreRatePage';
 import VolunteersPage from '../pages/explore/VolunteersPage';
+import ExploreRoutesPage from '../pages/explore/ExploreRoutesPage';
 
 
 const router = createBrowserRouter([
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
       { path: 'explore/list/all', element: <ExploreListPage /> },
       { path: 'explore/list/:slug', element: <ExploreCategoryPage /> },
       { path: 'explore/volunteers', element: <VolunteersPage /> },
+      { path: 'explore/routes', element: <ExploreRoutesPage /> },
       { path: 'explore/places/:id', element: <ExploreDetailPage /> },
       { path: 'explore/places/:id/rate', element: <ExploreRatePage /> }
     ],

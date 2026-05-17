@@ -1112,8 +1112,14 @@ body {
 
 .explore-categories {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 10px;
+  padding-bottom: 4px;
+}
+
+.explore-categories::-webkit-scrollbar {
+  display: none;
 }
 
 .explore-category-chip {
@@ -1125,6 +1131,8 @@ body {
   padding: 12px 14px;
   font-size: 14px;
   color: #111111;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .explore-category-chip__icon {
@@ -1205,7 +1213,7 @@ body {
 }
 
 .route-card {
-  flex: 0 0 150px;
+  flex: 0 0 170px;
   background: #ffffff;
   border-radius: 22px;
   padding: 12px;
@@ -1259,7 +1267,6 @@ body {
 }
 
 .volunteer-card {
-  flex: 0 0 160px;
   background: #ffffff;
   border-radius: 22px;
   padding: 12px;
@@ -1268,11 +1275,20 @@ body {
   gap: 10px;
 }
 
+.volunteer-card--compact {
+  flex: 0 0 160px;
+}
+
 .volunteer-card__image-wrapper {
   width: 100%;
-  height: 92px;
+  aspect-ratio: 4 / 3;
   border-radius: 16px;
   overflow: hidden;
+}
+
+.volunteer-card--compact .volunteer-card__image-wrapper {
+  aspect-ratio: unset;
+  height: 92px;
 }
 
 .volunteer-card__avatar {
@@ -1556,4 +1572,11 @@ body {
   cursor: pointer;
   padding: 0;
   font: inherit;
+}
+
+.explore-routes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding-bottom: 20px;
 }
