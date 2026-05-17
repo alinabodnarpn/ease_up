@@ -15,13 +15,15 @@ const categories = [
   { id: 2, label: 'Одяг', icon: '/icons/category-clothes.svg', slug: 'clothes' },
   { id: 3, label: 'Аптеки', icon: '/icons/category-pharmacy.svg', slug: 'pharmacy' },
   { id: 4, label: 'Ресторани', icon: '/icons/category-restaurant.svg', slug: 'restaurant' },
-  { id: 5, label: 'Кав’ярні', icon: '/icons/category-cafe.svg', slug: 'cafe' },
+  { id: 5, label: 'Кав\'ярні', icon: '/icons/category-cafe.svg', slug: 'cafe' },
   { id: 6, label: 'Парки', icon: '/icons/category-park.svg', slug: 'park' },
-  { id: 7, label: 'Музеї', icon: '/icons/category-park.svg', slug: 'museum' }
+  { id: 7, label: 'Музеї', icon: '/icons/category-park.svg', slug: 'museum' },
 ];
 
 export default function ExplorePage() {
   const [query, setQuery] = useState('');
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [ratingFilter, setRatingFilter] = useState('all');
 
   const {
     data: popularPlaces,
@@ -43,14 +45,19 @@ export default function ExplorePage() {
 
   const filteredPlaces = useMemo(() => {
     if (!popularPlaces) return [];
-    if (!query.trim()) return popularPlaces;
-
-    return popularPlaces.filter((place) =>
-      `${place.title} ${place.description} ${place.address}`
-        .toLowerCase()
-        .includes(query.toLowerCase())
-    );
-  }, [popularPlaces, query]);
+    let result = popularPlaces;
+    if (query.trim()) {
+      result = result.filter((place) =>
+        `${place.title} ${place.description} ${place.address}`
+          .toLowerCase()
+          .includes(query.toLowerCase())
+      );
+    }
+    if (ratingFilter !== 'all') {
+      result = result.filter((place) => place.rating >= Number(ratingFilter));
+    }
+    return result;
+  }, [popularPlaces, query, ratingFilter]);
 
   const filteredRoutes = useMemo(() => {
     if (!routes) return [];
@@ -104,7 +111,12 @@ export default function ExplorePage() {
             />
           </div>
 
-          <button type="button" className="explore-filter-btn" aria-label="Фільтр">
+          <button
+            type="button"
+            className="explore-filter-btn"
+            aria-label="Фільтр"
+            onClick={() => setFilterOpen(true)}
+          >
             <img src="/icons/slider.png" alt="" />
           </button>
         </div>
@@ -119,21 +131,21 @@ export default function ExplorePage() {
         </div>
 
         <div className="explore-categories">
-        {categories.map((category) => (
-          <Link
-            key={category.id}
-            to={`/explore/list/${category.slug}`}
-            className="explore-category-chip"
-          >
-            <img
-              src={category.icon}
-              alt=""
-              className="explore-category-chip__icon"
-            />
-            <span>{category.label}</span>
-          </Link>
-        ))}
-      </div>
+          {categories.map((category) => (
+            <Link
+              key={category.id}
+              to={`/explore/list/${category.slug}`}
+              className="explore-category-chip"
+            >
+              <img
+                src={category.icon}
+                alt=""
+                className="explore-category-chip__icon"
+              />
+              <span>{category.label}</span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <section className="explore-section">
@@ -189,6 +201,31 @@ export default function ExplorePage() {
           ))}
         </div>
       </section>
+
+      {filterOpen && (
+        <div className="filter-sheet-overlay" onClick={() => setFilterOpen(false)}>
+          <div className="filter-sheet" onClick={(e) => e.stopPropagation()}>
+            <h3 className="filter-sheet__title">Фільтр місць</h3>
+            <div className="filter-sheet__options">
+              {[
+                { label: 'Всі місця', value: 'all' },
+                { label: 'Рейтинг від 4.0', value: '4' },
+                { label: 'Рейтинг від 4.5', value: '4.5' },
+                { label: 'Рейтинг 5.0', value: '5' },
+              ].map((f) => (
+                <button
+                  key={f.value}
+                  type="button"
+                  className={`filter-sheet__option ${ratingFilter === f.value ? 'filter-sheet__option--active' : ''}`}
+                  onClick={() => { setRatingFilter(f.value); setFilterOpen(false); }}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

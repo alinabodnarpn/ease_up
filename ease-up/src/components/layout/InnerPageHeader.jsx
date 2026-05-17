@@ -1,9 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-export default function InnerPageHeader({
-  title,
-  showFilter = true,
-}) {
+export default function InnerPageHeader({ title, showFilter = true, onFilterClick }) {
   const navigate = useNavigate();
 
   return (
@@ -24,6 +21,7 @@ export default function InnerPageHeader({
           type="button"
           className="inner-page-header__filter"
           aria-label="Фільтр"
+          onClick={onFilterClick}
         >
           <img src="/icons/filter.svg" alt="" />
         </button>

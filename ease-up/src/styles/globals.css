@@ -1281,7 +1281,7 @@ body {
 
 .volunteer-card__image-wrapper {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -1579,4 +1579,61 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 14px;
   padding-bottom: 20px;
+}
+.filter-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.filter-sheet {
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-sheet__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.filter-sheet__options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-sheet__option {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  background: #f3f3f3;
+  font-size: 16px;
+  color: #111111;
+  text-align: left;
+  border: 2px solid transparent;
+}
+
+.filter-sheet__option--active {
+  background: #fff4e8;
+  border-color: #f68b1f;
+  color: #f68b1f;
+  font-weight: 600;
+}
+
+.volunteers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding-bottom: 16px;
 }
