@@ -2,16 +2,22 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InnerPageHeader from '../components/layout/InnerPageHeader';
 import { createAnnouncement } from '../services/announcementsApi';
+import { useAppState } from '../hooks/useAppContext';
 
 export default function CreateAnnouncementPage() {
   const navigate = useNavigate();
+  const { user } = useAppState();
+
+  const today = new Date().toLocaleDateString('uk-UA', {
+    day: '2-digit', month: '2-digit', year: '2-digit',
+  });
 
   const [form, setForm] = useState({
-    author: 'Maks',
-    date: '26.04.26',
+    author: user.name,
+    date: today,
     title: '',
     text: '',
-    avatar: '/images/avatar-maks.png',
+    avatar: user.avatar,
     likes: 0,
     comments: 0,
     shares: 0,
@@ -21,34 +27,22 @@ export default function CreateAnnouncementPage() {
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (field) => (event) => {
-    setForm((prev) => ({
-      ...prev,
-      [field]: event.target.value,
-    }));
+    setForm((prev) => ({ ...prev, [field]: event.target.value }));
   };
 
   const handlePhotoChange = (index) => (event) => {
     const file = event.target.files[0];
     if (!file) return;
-
     const previewUrl = URL.createObjectURL(file);
-
     setPhotos((prev) => prev.map((photo, i) => (i === index ? previewUrl : photo)));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSubmitting(true);
-
     const firstPhoto = photos.find(Boolean) || null;
-
-    const newAnnouncement = {
-      ...form,
-      image: firstPhoto,
-    };
-
     try {
-      await createAnnouncement(newAnnouncement);
+      await createAnnouncement({ ...form, image: firstPhoto });
       navigate('/announcements');
     } catch (error) {
       console.error(error);
@@ -85,7 +79,6 @@ export default function CreateAnnouncementPage() {
 
         <div className="form-field">
           <span className="form-label">Фото</span>
-
           <div className="appeal-photo-grid">
             {photos.map((photo, index) => (
               <label key={index} className="appeal-photo-slot">
@@ -93,20 +86,10 @@ export default function CreateAnnouncementPage() {
                   <img src={photo} alt="" className="appeal-photo-preview" />
                 ) : (
                   <div className="appeal-photo-placeholder">
-                    <img
-                      src="/icons/image-placeholder.svg"
-                      alt=""
-                      className="appeal-photo-placeholder-icon"
-                    />
+                    <img src="/icons/image-placeholder.svg" alt="" className="appeal-photo-placeholder-icon" />
                   </div>
                 )}
-
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handlePhotoChange(index)}
-                  hidden
-                />
+                <input type="file" accept="image/*" onChange={handlePhotoChange(index)} hidden />
               </label>
             ))}
           </div>
