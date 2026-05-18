@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useAppState } from '../../hooks/useAppContext';
 
 export default function AnnouncementCard({
+  id,
   author,
   date,
   title,
@@ -10,9 +12,15 @@ export default function AnnouncementCard({
   likes = 0,
   comments = 0,
   shares = 0,
+  onDelete,
 }) {
+  const { user } = useAppState();
+
+  const isOwnPost = author === user.name;
+
   const [isLiked, setIsLiked] = useState(false);
   const [showComments, setShowComments] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [commentInput, setCommentInput] = useState('');
   const [localComments, setLocalComments] = useState([]);
 
@@ -54,6 +62,19 @@ export default function AnnouncementCard({
     alert('Повідомлення автору поки працює як демо-функція.');
   };
 
+  const handleDelete = () => {
+    if (!isOwnPost) return;
+
+    if (id === undefined || id === null) return;
+
+    const confirmed = window.confirm('Видалити це оголошення?');
+
+    if (!confirmed) return;
+
+    onDelete?.(id);
+    setShowMenu(false);
+  };
+
   const totalComments = comments + localComments.length;
   const displayedLikes = isLiked ? likes + 1 : likes;
 
@@ -73,13 +94,38 @@ export default function AnnouncementCard({
           </div>
         </div>
 
-        <button
-          className="announcement-card__more-btn"
-          type="button"
-          aria-label="Більше"
-        >
-          ⋮
-        </button>
+        <div className="card-menu">
+          <button
+            className="announcement-card__more-btn"
+            type="button"
+            aria-label="Більше"
+            onClick={() => setShowMenu((prev) => !prev)}
+          >
+            ⋮
+          </button>
+
+          {showMenu && (
+            <div className="card-menu__dropdown">
+              {isOwnPost ? (
+                <button
+                  type="button"
+                  className="card-menu__item card-menu__item--danger"
+                  onClick={handleDelete}
+                >
+                  Видалити
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="card-menu__item card-menu__item--disabled"
+                  disabled
+                >
+                  Не ваше оголошення
+                </button>
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="announcement-card__body">

@@ -12,13 +12,17 @@ export default function PublicationCard({
   likes = 0,
   comments = 0,
   shares = 0,
+  onDelete,
 }) {
   const dispatch = useAppDispatch();
 
   const {
+    user,
     likedPublicationIds,
     publicationComments,
   } = useAppState();
+
+  const isOwnPost = author === user.name;
 
   const isLiked = likedPublicationIds.includes(id);
   const displayedLikes = isLiked ? likes + 1 : likes;
@@ -27,6 +31,7 @@ export default function PublicationCard({
   const totalComments = comments + savedComments.length;
 
   const [showComments, setShowComments] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [commentInput, setCommentInput] = useState('');
 
   const handleLikeClick = () => {
@@ -85,6 +90,19 @@ export default function PublicationCard({
     }
   };
 
+  const handleDelete = () => {
+    if (!isOwnPost) return;
+
+    if (id === undefined || id === null) return;
+
+    const confirmed = window.confirm('Видалити цю публікацію?');
+
+    if (!confirmed) return;
+
+    onDelete?.(id);
+    setShowMenu(false);
+  };
+
   return (
     <article className="publication-card">
       <div className="publication-card__header">
@@ -101,13 +119,38 @@ export default function PublicationCard({
           </div>
         </div>
 
-        <button
-          className="publication-card__more-btn"
-          type="button"
-          aria-label="Більше"
-        >
-          ⋮
-        </button>
+        <div className="card-menu">
+          <button
+            className="publication-card__more-btn"
+            type="button"
+            aria-label="Більше"
+            onClick={() => setShowMenu((prev) => !prev)}
+          >
+            ⋮
+          </button>
+
+          {showMenu && (
+            <div className="card-menu__dropdown">
+              {isOwnPost ? (
+                <button
+                  type="button"
+                  className="card-menu__item card-menu__item--danger"
+                  onClick={handleDelete}
+                >
+                  Видалити
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="card-menu__item card-menu__item--disabled"
+                  disabled
+                >
+                  Не ваш пост
+                </button>
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="publication-card__body">

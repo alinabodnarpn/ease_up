@@ -7,3 +7,7 @@ export function getAnnouncements() {
 export function createAnnouncement(announcement) {
   return api.post('/announcements', announcement);
 }
+
+export function deleteAnnouncement(id) {
+  return api.delete(`/announcements/${id}`);
+}

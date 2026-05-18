@@ -1,16 +1,32 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InnerPageHeader from '../components/layout/InnerPageHeader';
+import { useAppDispatch, useAppState } from '../hooks/useAppContext';
 
 export default function CreateApplicationStep2Page() {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { applicationDraft } = useAppState();
+
   const [form, setForm] = useState({
-    category: 'ramps',
-    description: '',
-    isPrivate: false,
+    category: applicationDraft.step2?.category || 'ramps',
+    description: applicationDraft.step2?.description || '',
+    isPrivate: applicationDraft.step2?.isPrivate || false,
   });
 
   const isValid = form.description.trim().length > 0;
+
+  const handleNext = () => {
+    if (!isValid) return;
+
+    dispatch({
+      type: 'save_application_step',
+      step: 'step2',
+      payload: form,
+    });
+
+    navigate('/create/application/step-3');
+  };
 
   return (
     <main className="main-content">
@@ -26,10 +42,16 @@ export default function CreateApplicationStep2Page() {
           <span className="form-label">
             Оберіть категорію звернення <span className="form-required">*</span>
           </span>
+
           <select
             className="form-input form-select"
             value={form.category}
-            onChange={(e) => setForm(prev => ({ ...prev, category: e.target.value }))}
+            onChange={(e) =>
+              setForm((prev) => ({
+                ...prev,
+                category: e.target.value,
+              }))
+            }
           >
             <option value="ramps">Пандуси</option>
             <option value="lifts">Ліфти та підйомники</option>
@@ -46,7 +68,12 @@ export default function CreateApplicationStep2Page() {
           <textarea
             className="form-input form-textarea"
             value={form.description}
-            onChange={(e) => setForm(prev => ({ ...prev, description: e.target.value }))}
+            onChange={(e) =>
+              setForm((prev) => ({
+                ...prev,
+                description: e.target.value,
+              }))
+            }
             placeholder="Опис звернення"
           />
         </label>
@@ -57,14 +84,19 @@ export default function CreateApplicationStep2Page() {
             type="checkbox"
             className="appeal-checkbox"
             checked={form.isPrivate}
-            onChange={(e) => setForm(prev => ({ ...prev, isPrivate: e.target.checked }))}
+            onChange={(e) =>
+              setForm((prev) => ({
+                ...prev,
+                isPrivate: e.target.checked,
+              }))
+            }
           />
         </label>
 
         <button
           className={`primary-wide-button${!isValid ? ' primary-wide-button--disabled' : ''}`}
           type="button"
-          onClick={() => isValid && navigate('/create/application/step-3')}
+          onClick={handleNext}
         >
           Продовжити
         </button>

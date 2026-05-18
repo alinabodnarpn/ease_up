@@ -7,3 +7,7 @@ export function getPublications() {
 export function createPublication(publication) {
   return api.post('/publications', publication);
 }
+
+export function deletePublication(id) {
+  return api.delete(`/publications/${id}`);
+}

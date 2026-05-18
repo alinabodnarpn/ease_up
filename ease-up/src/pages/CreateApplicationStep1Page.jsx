@@ -1,23 +1,42 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InnerPageHeader from '../components/layout/InnerPageHeader';
+import { useAppDispatch, useAppState } from '../hooks/useAppContext';
 
 export default function CreateApplicationStep1Page() {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { applicationDraft } = useAppState();
+
   const [form, setForm] = useState({
-    surname: '',
-    name: '',
-    middleName: '',
-    city: 'lviv',
-    street: '',
-    building: '',
+    surname: applicationDraft.step1?.surname || '',
+    name: applicationDraft.step1?.name || '',
+    middleName: applicationDraft.step1?.middleName || '',
+    city: applicationDraft.step1?.city || 'lviv',
+    street: applicationDraft.step1?.street || '',
+    building: applicationDraft.step1?.building || '',
   });
 
   const handleChange = (field) => (e) => {
-    setForm(prev => ({ ...prev, [field]: e.target.value }));
+    setForm((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
-  const isValid = form.surname.trim() && form.name.trim() && form.middleName.trim();
+  const isValid =
+    form.surname.trim() &&
+    form.name.trim() &&
+    form.middleName.trim();
+
+  const handleNext = () => {
+    if (!isValid) return;
+
+    dispatch({
+      type: 'save_application_step',
+      step: 'step1',
+      payload: form,
+    });
+
+    navigate('/create/application/step-2');
+  };
 
   return (
     <main className="main-content">
@@ -30,7 +49,9 @@ export default function CreateApplicationStep1Page() {
 
       <section className="form-page">
         <label className="form-field">
-          <span className="form-label">Прізвище <span className="form-required">*</span></span>
+          <span className="form-label">
+            Прізвище <span className="form-required">*</span>
+          </span>
           <input
             className="form-input"
             value={form.surname}
@@ -40,7 +61,9 @@ export default function CreateApplicationStep1Page() {
         </label>
 
         <label className="form-field">
-          <span className="form-label">Ім'я <span className="form-required">*</span></span>
+          <span className="form-label">
+            Ім'я <span className="form-required">*</span>
+          </span>
           <input
             className="form-input"
             value={form.name}
@@ -50,7 +73,9 @@ export default function CreateApplicationStep1Page() {
         </label>
 
         <label className="form-field">
-          <span className="form-label">По батькові <span className="form-required">*</span></span>
+          <span className="form-label">
+            По батькові <span className="form-required">*</span>
+          </span>
           <input
             className="form-input"
             value={form.middleName}
@@ -60,7 +85,9 @@ export default function CreateApplicationStep1Page() {
         </label>
 
         <label className="form-field">
-          <span className="form-label">Місто <span className="form-required">*</span></span>
+          <span className="form-label">
+            Місто <span className="form-required">*</span>
+          </span>
           <select
             className="form-input form-select"
             value={form.city}
@@ -82,6 +109,7 @@ export default function CreateApplicationStep1Page() {
               placeholder="Вулиця"
             />
           </label>
+
           <label className="form-field form-field--narrow">
             <span className="form-label">Будинок</span>
             <input
@@ -96,7 +124,7 @@ export default function CreateApplicationStep1Page() {
         <button
           className={`primary-wide-button${!isValid ? ' primary-wide-button--disabled' : ''}`}
           type="button"
-          onClick={() => isValid && navigate('/create/application/step-2')}
+          onClick={handleNext}
         >
           Продовжити
         </button>

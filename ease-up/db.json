@@ -106,6 +106,38 @@
       "progress": 70,
       "startDate": "23.11.24",
       "daysLeft": 45
+    },
+    {
+      "category": "Пандуси",
+      "author": "Прізвище Імʼя По батькові",
+      "text": "звернення",
+      "description": "звернення",
+      "address": "Франка 80",
+      "image": "/images/application-1.png",
+      "status": "Триває збір підписів",
+      "current": 0,
+      "goal": 500,
+      "progress": 0,
+      "startDate": "18.05.26",
+      "daysLeft": 60,
+      "isPrivate": false,
+      "id": 3
+    },
+    {
+      "category": "Світлофори та переходи",
+      "author": "призвіще імʼя по батькові",
+      "text": "опис",
+      "description": "опис",
+      "address": "стрийська 15",
+      "image": "/images/application-1.png",
+      "status": "Триває збір підписів",
+      "current": 0,
+      "goal": 500,
+      "progress": 0,
+      "startDate": "18.05.26",
+      "daysLeft": 60,
+      "isPrivate": true,
+      "id": 4
     }
   ],
   "announcements": [
@@ -122,18 +154,6 @@
       "shares": 3
     },
     {
-      "id": 2,
-      "author": "Ira",
-      "date": "15.10.24",
-      "title": "Віддам ходунки",
-      "text": "Віддам ходунки в хорошому стані. Самовивіз у Львові.",
-      "avatar": "/images/avatar.svg",
-      "image": "/images/announcement-1.png",
-      "likes": 12,
-      "comments": 4,
-      "shares": 1
-    },
-    {
       "author": "Maks",
       "date": "26.04.26",
       "title": "оголошення",
@@ -144,74 +164,232 @@
       "shares": 0,
       "image": null,
       "id": 3
+    },
+    {
+      "author": "Maks",
+      "date": "26.04.26",
+      "title": "заголовок",
+      "text": "опис",
+      "avatar": "/images/avatar-maks.png",
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "image": null,
+      "id": 4
     }
   ],
   "places": [
-    {
-      "id": 1,
-      "title": "Музей Івана Георгія Пінзеля",
-      "description": "Доступний вхід, просторий зал, є можливість пересування на кріслі колісному.",
-      "address": "Площа Митна, 2",
-      "image": "/images/place-pinzel-museum.svg",
-      "rating": "2.5",
-      "ratingsCount": 2,
-      "category": "museum",
-      "popular": true,
-      "features": [
-        "Доступний вхід",
-        "Просторий зал",
-        "Поруч зупинка"
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Celentano Ristorante",
-      "description": "Заклад у центрі міста зі зручним входом і достатнім простором між столиками.",
-      "address": "Площа Ринок, 16",
-      "image": "/images/place-celentano.svg",
-      "rating": "4.8",
-      "ratingsCount": 1,
-      "category": "food",
-      "popular": true,
-      "features": [
-        "Зручний вхід",
-        "Просторий зал",
-        "Дружній персонал"
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Музей Науки",
-      "description": "Інтерактивний простір із доступним входом та зручним пересуванням усередині.",
-      "address": "Вул. Стрийська, 200",
-      "image": "/images/place-science-museum.svg",
-      "rating": "4.9",
-      "ratingsCount": 1,
-      "category": "museum",
-      "popular": true,
-      "features": [
-        "Ліфт",
-        "Доступний вхід",
-        "Інклюзивний простір"
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Jam Factory Art Center",
-      "description": "Сучасний артпростір з подіями, виставками та доступним входом.",
-      "address": "Вул. Богдана Хмельницького, 124",
-      "image": "/images/place-jam-factory.svg",
-      "rating": "4.7",
-      "ratingsCount": 1,
-      "category": "art",
-      "popular": false,
-      "features": [
-        "Доступний вхід",
-        "Ліфт",
-        "Події"
-      ]
-    }
-  ],
+  {
+    "id": 1,
+    "title": "Музей Івана Георгія Пінзеля",
+    "description": "Музей видатного українського скульптора доби бароко Івана Георгія Пінзеля розташований у колишньому костелі кларисок у Львові, що є пам’яткою архітектури XVII століття.",
+    "address": "Площа Митна, 2",
+    "fullAddress": "Львів, площа Митна, 2",
+    "image": "/images/place-pinzel-museum.svg",
+    "rating": "2.5",
+    "ratingsCount": 2,
+    "category": "museum",
+    "popular": true,
+    "likes": 45,
+    "distance": "1 км від вас",
+    "workingHours": "10:00–18:00 (неділя — 12:00–17:00)",
+    "phone": "+380 98 723 9143",
+    "email": "lv.artgallery.info@gmail.com",
+    "website": "museum.lviv.ua",
+    "accessibility": [
+      {
+        "id": 1,
+        "label": "Безбар’єрний шлях до будівлі",
+        "available": true
+      },
+      {
+        "id": 2,
+        "label": "Доступний вхід у будівлю",
+        "available": true
+      },
+      {
+        "id": 3,
+        "label": "Інклюзивна рецепція",
+        "available": true
+      },
+      {
+        "id": 4,
+        "label": "Безбар’єрність у приміщенні",
+        "available": true
+      },
+      {
+        "id": 5,
+        "label": "Інклюзивна експозиція",
+        "available": true
+      },
+      {
+        "id": 6,
+        "label": "Інклюзивна парковка",
+        "available": false
+      },
+      {
+        "id": 7,
+        "label": "Інклюзивна вбиральня",
+        "available": false
+      }
+    ],
+    "features": [
+      "Доступний вхід",
+      "Просторий зал",
+      "Поруч зупинка"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Celentano Ristorante",
+    "description": "Заклад у центрі міста зі зручним входом і достатнім простором між столиками.",
+    "address": "Площа Ринок, 16",
+    "fullAddress": "Львів, площа Ринок, 16",
+    "image": "/images/place-celentano.svg",
+    "rating": "4.9",
+    "ratingsCount": 2,
+    "category": "food",
+    "popular": true,
+    "likes": 32,
+    "distance": "1.4 км від вас",
+    "workingHours": "09:00–22:00",
+    "phone": "+380 67 111 2233",
+    "email": "celentano@example.com",
+    "website": "celentano.example.com",
+    "accessibility": [
+      {
+        "id": 1,
+        "label": "Зручний вхід у заклад",
+        "available": true
+      },
+      {
+        "id": 2,
+        "label": "Просторий зал",
+        "available": true
+      },
+      {
+        "id": 3,
+        "label": "Доступні проходи між столиками",
+        "available": true
+      },
+      {
+        "id": 4,
+        "label": "Дружній персонал",
+        "available": true
+      },
+      {
+        "id": 5,
+        "label": "Інклюзивна вбиральня",
+        "available": false
+      }
+    ],
+    "features": [
+      "Зручний вхід",
+      "Просторий зал",
+      "Дружній персонал"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Музей Науки",
+    "description": "Інтерактивний простір із доступним входом та зручним пересуванням усередині.",
+    "address": "Вул. Стрийська, 200",
+    "fullAddress": "Львів, вул. Стрийська, 200",
+    "image": "/images/place-science-museum.svg",
+    "rating": "4.9",
+    "ratingsCount": 1,
+    "category": "museum",
+    "popular": true,
+    "likes": 51,
+    "distance": "3 км від вас",
+    "workingHours": "10:00–19:00",
+    "phone": "+380 50 222 3344",
+    "email": "science.museum@example.com",
+    "website": "science-museum.example.com",
+    "accessibility": [
+      {
+        "id": 1,
+        "label": "Доступний вхід",
+        "available": true
+      },
+      {
+        "id": 2,
+        "label": "Ліфт",
+        "available": true
+      },
+      {
+        "id": 3,
+        "label": "Інклюзивний простір",
+        "available": true
+      },
+      {
+        "id": 4,
+        "label": "Доступна вбиральня",
+        "available": true
+      },
+      {
+        "id": 5,
+        "label": "Інклюзивна парковка",
+        "available": false
+      }
+    ],
+    "features": [
+      "Ліфт",
+      "Доступний вхід",
+      "Інклюзивний простір"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Jam Factory Art Center",
+    "description": "Сучасний артпростір з подіями, виставками та доступним входом.",
+    "address": "Вул. Богдана Хмельницького, 124",
+    "fullAddress": "Львів, вул. Богдана Хмельницького, 124",
+    "image": "/images/place-jam-factory.svg",
+    "rating": "4.7",
+    "ratingsCount": 1,
+    "category": "art",
+    "popular": false,
+    "likes": 28,
+    "distance": "2.1 км від вас",
+    "workingHours": "11:00–20:00",
+    "phone": "+380 63 555 7788",
+    "email": "jam.factory@example.com",
+    "website": "jamfactory.example.com",
+    "accessibility": [
+      {
+        "id": 1,
+        "label": "Доступний вхід",
+        "available": true
+      },
+      {
+        "id": 2,
+        "label": "Ліфт",
+        "available": true
+      },
+      {
+        "id": 3,
+        "label": "Доступні події",
+        "available": true
+      },
+      {
+        "id": 4,
+        "label": "Інклюзивна рецепція",
+        "available": true
+      },
+      {
+        "id": 5,
+        "label": "Інклюзивна парковка",
+        "available": false
+      }
+    ],
+    "features": [
+      "Доступний вхід",
+      "Ліфт",
+      "Події"
+    ]
+  }
+],
   "routes": [
     {
       "id": 1,
@@ -285,6 +463,20 @@
         "5": "no"
       },
       "id": 3
+    },
+    {
+      "placeId": 2,
+      "createdAt": "2026-05-18T05:35:55.395Z",
+      "rating": 5,
+      "answers": {
+        "0": "yes",
+        "1": "yes",
+        "2": "yes",
+        "3": "yes",
+        "4": "yes",
+        "5": "yes"
+      },
+      "id": 4
     }
   ],
   "profile": {
